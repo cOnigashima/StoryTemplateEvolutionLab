@@ -2,7 +2,7 @@
 
 > field の「空に見える状態」を 12 値で区別する。
 > Judge 4 値 / Lock 5 状態も同じ語彙系統。
-> 基底 11 値の詳細は `../../proposal/2026-04-30-zero-base-v4/02_domain_model.md` Section 12。
+> 基底 11 値の詳細は `v4/02_domain_model.md` Section 12。
 > 2026-07-06 の workbench 統合で `rejected` を加え **12 値に拡張**（本ファイルが 12 値の正本）。
 
 ---

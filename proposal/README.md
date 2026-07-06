@@ -12,7 +12,7 @@
 | `2026-04-22-story-template-v2/` | 2026-04-22 | **historic / partially-absorbed** | v2-fat。Layer 構造と Review Matrix の発想を v3/v4 に継承 |
 | `2026-04-29-domain-kernel-v3/` | 2026-04-29 | **historic / superseded by v4** | kernel 11 項目・status 11 値・DoR DoD は v4 が継承。v4 採用後は archive 候補 |
 | `2026-04-29-pilot-driven-evolution/` | 2026-04-29 | **historic / methodology** | 「pilot から抽象化する」方針。v4 もこの方法論に乗る |
-| `2026-04-30-zero-base-v4/` | 2026-04-30 | **★ ADOPTED (2026-04-30)** | ドメイン語彙・DoR・pipeline の正本として現役。構造・運用面は 2026-07-06 提案が置換 |
+| `2026-04-30-zero-base-v4/` | 2026-04-30 | **historic / adopted-then-frozen** | 2026-04-30 採用。2026-07-06 に正本を `current/docs/domain/` へ移管し、本フォルダは採用時スナップショットとして凍結 |
 | `2026-04-31-storytemplate_workflow_handoff_pack_takt/` | 2026-04-31 | **historic / partially-absorbed** | TAKT 接合 Pack。v4 採用時は見送り → 2026-07-06 提案が TAKT ループを暫定採用し部分継承 |
 | `2026-07-06-workbench-ontology-loop/` | 2026-07-06 | **★ ADOPTED (2026-07-06)** | current を全面置換（オントロジー基盤 / TAKT ループ / core+overlay / 人間ゲート）。旧 current は `archive/2026-04-31-integreated/` へ |
 
@@ -63,7 +63,7 @@
 - 7 本の review prompt
 - 3 作品の pilot validation walkthrough
 
-→ **2026-04-30 に正式採用**。ドメイン語彙（56 語 Card）・DoR/DoD・intake checklist の正本として現役。
+→ **2026-04-30 に正式採用**。2026-07-06 に生きた正本を `current/docs/domain/`（00-06, 09）へ移管し、本フォルダは**採用時スナップショット（凍結・編集禁止）**。08_pilot_validation / 10_migration_plan は歴史例としてここのみ。
 → 構造・運用面（ディレクトリ / ループ / ゲート）は 2026-07-06 提案が置換。
 
 ### 2026-04-31-storytemplate_workflow_handoff_pack_takt/ — historic

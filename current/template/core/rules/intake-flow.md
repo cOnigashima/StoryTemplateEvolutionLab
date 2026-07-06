@@ -84,9 +84,9 @@ inbox/  →  synthesis/session_digests/  →  synthesis/update_proposals/
 
 ## v4 での更新（2026-04-30）
 
-- 86 項目の Intake Coverage Checklist を必ず通す → `proposal/2026-04-30-zero-base-v4/05_intake_coverage_checklist.md`
-- 12 status 値（filled / tentative / deferred / intentionally_blank / intentionally_hidden / not_applicable / genre_not_applicable / project_override / contradiction / needs_author_decision / missing / rejected）— 正本は `docs/status_vocabulary.md`（基底 11 値は `proposal/2026-04-30-zero-base-v4/02_domain_model.md` Section 12、2026-07-06 に 12 値へ拡張）
+- 86 項目の Intake Coverage Checklist を必ず通す → `docs/domain/05_intake_coverage_checklist.md`
+- 12 status 値（filled / tentative / deferred / intentionally_blank / intentionally_hidden / not_applicable / genre_not_applicable / project_override / contradiction / needs_author_decision / missing / rejected）— 正本は `docs/status_vocabulary.md`（基底 11 値は `docs/domain/02_domain_model.md` Section 12、2026-07-06 に 12 値へ拡張）
 - Intake Adapter prompt は v4 化済 → `current/adapter/intake_adapter.md`
-- 7 review prompt で intake 出力を機械検証 → `proposal/2026-04-30-zero-base-v4/07_review_prompts/`
+- 7 review prompt で intake 出力を機械検証 → `adapter/review_prompts/`
 - Bible Facet 17 体制（System / Timeline / Sample Scene 新設）→ intake で各 facet に振り分ける際に注意
-- 採用後の正本フロー: `proposal/2026-04-30-zero-base-v4/04_pipeline_overview.md`
+- 採用後の正本フロー: `docs/domain/04_pipeline_overview.md`

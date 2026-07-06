@@ -10,9 +10,9 @@
 
 ## 前提読み込み
 
-- `02_domain_model.md` Section 7（Update Proposal） + Section 3（格納域）
-- `04_pipeline_overview.md` Phase 1 Section 1.3（Human Approval）
-- `06_bible_dor.md` Section 1.7（一貫性チェック）
+- `../../docs/domain/02_domain_model.md` Section 7（Update Proposal） + Section 3（格納域）
+- `../../docs/domain/04_pipeline_overview.md` Phase 1 Section 1.3（Human Approval）
+- `../../docs/domain/06_bible_dor.md` Section 1.7（一貫性チェック）
 - `adapter/update_proposal_format.yaml`（既存 format 規定）
 - 検査対象の Update Proposal ファイル
 - 反映先の bible / design / state ファイル

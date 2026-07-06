@@ -2,7 +2,7 @@
 
 > 1 作品 1 ファイル: `story/kernel.yaml`
 > これ以上に項目を増やさない。増やしたい項目は overlay / lens / bible / craft に出す。
-> 詳細は `proposal/2026-04-30-zero-base-v4/02_domain_model.md` Section 4 (Bible Facet)。
+> 詳細は `docs/domain/02_domain_model.md` Section 4 (Bible Facet)。
 > v3 履歴: `proposal/2026-04-29-domain-kernel-v3/04_kernel_spec.md`
 
 ---
@@ -181,7 +181,7 @@ Q5. レビュー時の判定軸か?
 
 - `premise:` フィールド → `logline:` にリネーム（kernel #1）
   - Premise は overloaded（Egri 用法と衝突）のため deprecated
-  - 詳細: `proposal/2026-04-30-zero-base-v4/02_domain_model.md` Section 4 / Section 14
+  - 詳細: `docs/domain/02_domain_model.md` Section 4 / Section 14
 - `schema_version: "v3"` → `"v4"`
 - Bible Facet 17 体制への対応（System / Timeline / Sample Scene 新設）
 - status 12 値で運用（11 値は v3 から継承、2026-07-06 に rejected / genre_not_applicable 両立で 12 値へ拡張。正本: docs/status_vocabulary.md）
@@ -191,4 +191,4 @@ Q5. レビュー時の判定軸か?
 
 ## サンプル
 
-実例: `proposal/2026-04-30-zero-base-v4/08_pilot_validation/`（ia_society / ore_tueee / fools-with-cheating の実装例） (本セッション後に realized)
+実例: `docs/domain/08_pilot_validation/`（ia_society / ore_tueee / fools-with-cheating の実装例）

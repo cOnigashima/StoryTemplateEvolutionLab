@@ -2,7 +2,7 @@
 
 > **v4 注記 (2026-04-30)**: 本 skill 定義は v4 generic 雛形。
 > 各 work で実行する際は work 固有の `bible/` `state/` を参照。
-> v4 のフロー全体: `proposal/2026-04-30-zero-base-v4/04_pipeline_overview.md`
+> v4 のフロー全体: `docs/domain/04_pipeline_overview.md`
 > 旧 v3 の `scenes/drafted/` 等の dir 参照は v4 で更新あり（書き換え TODO、Q-B-001）。
 > Drafter は `drafter-preflight.md` rule の適用必須。
 

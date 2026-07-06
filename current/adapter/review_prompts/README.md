@@ -31,7 +31,7 @@
 5. **出力フォーマット** — 構造化された report
 6. **失敗パターン NG** — やりがちな間違い
 
-prompt 内では proposal 全体の文書を参照する（`02_domain_model.md` 等）。LLM が proposal 配下を全部読めることが前提。
+prompt 内では proposal 全体の文書を参照する（`../../docs/domain/02_domain_model.md` 等）。LLM が proposal 配下を全部読めることが前提。
 
 ---
 

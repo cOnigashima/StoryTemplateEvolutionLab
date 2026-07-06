@@ -1,7 +1,7 @@
 # レビュー依頼プロンプト（別セッション用）
 
 このファイルの本文を、新しいセッション（Claude Code / Cowork / codex 等）にそのまま貼って使う。
-目的: 新 `workbench/current/` が「元 StoryTemplateEvolution を正しく踏襲しつつ、オントロジー/ループ/コア+オーバーレイを整合的に組めているか」を第三者視点で監査させる。
+目的: 新 `current/` が「元 StoryTemplateEvolution を正しく踏襲しつつ、オントロジー/ループ/コア+オーバーレイを整合的に組めているか」を第三者視点で監査させる。
 
 ---
 
@@ -10,9 +10,9 @@
 あなたは Story OS テンプレートの監査レビュアーです。読み取り専用で作業してください（Read / Grep / Glob / bash の cat・ls のみ。ファイルは書き換えない。computer use・Finder は使わない）。要約に頼らず、必ず実ファイルを開いて根拠を引用してください。
 
 ### 対象
-- 新正本（レビュー対象）: `kakuyomu_platrom_20260706_統合試作/workbench/current/`
-- 設計提案: `kakuyomu_platrom_20260706_統合試作/workbench/proposal/2026-07-06-workbench-ontology-loop/`（PROPOSAL.md / COVERAGE.md / 00_現状把握マップ.md / 01_オントロジー適用の見立て.md）
-- 比較元（旧正本）: `kakuyomu_platrom_20260706_統合試作/StoryTemplateEvolutionのコピー/current/` と `.../proposal/2026-04-30-zero-base-v4/`
+- 新正本（レビュー対象）: `current/`（統合済み）
+- 設計提案: `proposal/2026-07-06-workbench-ontology-loop/`（PROPOSAL.md / COVERAGE.md / 00_現状把握マップ.md / 01_オントロジー適用の見立て.md）
+- 比較元（旧正本）: `archive/2026-04-31-integreated/`（旧current凍結）と `proposal/2026-04-30-zero-base-v4/`（凍結スナップショット）
 
 ### 前提
 新 current は旧 STE current を**置換**するもの。旧資産は極力コピーで踏襲し、そこに「オントロジー基盤 / TAKTループ / コア+オーバーレイ / 人間は成果物だけ見るゲート」を足している。継承の主張は `current/INHERITANCE.md` と `proposal/.../COVERAGE.md` に書かれている。
@@ -27,7 +27,7 @@
    - DoR/DoD（A/B/C・E/P/A）と status×DoR 表
    - Bible Facet 17 の完全リスト
    - agents 18 / skills 7 / rules 6 / checklists 3 / prompts 7 / craft / v4 review prompts 7 / intake coverage 86項目
-2. **整合性（内部矛盾）**: 重複や矛盾が無いか。特に DoR/DoD が複数箇所（`template/core/checklists/dor_dod.md` / `docs/dor_dod.md` / `docs/v4/06_bible_dor.md`）にあり正本がどれか曖昧でないか。kernel 記述の不一致。
+2. **整合性（内部矛盾）**: 重複や矛盾が無いか。特に DoR/DoD が複数箇所（`template/core/checklists/dor_dod.md` / `docs/dor_dod.md` / `docs/domain/06_bible_dor.md`）にあり正本がどれか曖昧でないか。kernel 記述の不一致。
 3. **参照の生死**: コピーした旧ファイル内の相対リンク（`proposal/2026-04-30-zero-base-v4/...` 等）が新 current 内で解決するか。切れているものを列挙。
 4. **新レイヤの妥当性**:
    - オントロジー: `template/core/schema/*` と `state/*` と `tools/ontology_check.py` が噛み合っているか。`python3 current/tools/ontology_check.py current/template/core` を実行し、検出内容が妥当か。

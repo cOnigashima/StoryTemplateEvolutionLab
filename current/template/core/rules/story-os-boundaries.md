@@ -22,4 +22,4 @@ Story OS に関わる作業では、次の境界を守る。
 - **Premise (kernel #1) は deprecated**: `Logline` を使う
 - **作品固有 facet の物理位置は同階層 + README で識別**: `bible/_custom/` のような prefix はつけない
 
-詳細: `proposal/2026-04-30-zero-base-v4/02_domain_model.md` Section 14（Deprecated）
+詳細: `docs/domain/02_domain_model.md` Section 14（Deprecated）

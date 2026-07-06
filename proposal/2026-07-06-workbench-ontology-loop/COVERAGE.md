@@ -21,19 +21,19 @@
 | unit taxonomy（Manuscript→Beat、最小条件、サイズ、ID命名、Scene Card警告） | △ overlayで暗示のみ | コピー | `current/docs/unit_taxonomy.md` |
 | Layer 0-4+R × Facet マップ、置き場マトリクス | ✗ 欠落 | コピー | `current/docs/layer_facet_map.md` |
 | kernel_spec（全11項目schema・MUST/SHOULD・kernel除外・判定木） | △ 簡略版（ドリフト） | 元の完全版に差替 | `current/docs/kernel_spec.md` + `template/core/kernel.template.yaml` |
-| DoR/DoD 完全版（A/B/C・E/P/A、status×DoR表、reverse flow） | △ E中心・簡略 | v4正本をコピー | `current/docs/v4/06_bible_dor.md` |
-| Bible Facet 17体制の完全リスト | △ 約10facet | v4/domain_model + facetテンプレ | `current/docs/v4/02_domain_model.md` + `template/core/bible/_facet_templates/` |
+| DoR/DoD 完全版（A/B/C・E/P/A、status×DoR表、reverse flow） | △ E中心・簡略 | v4正本をコピー | `current/docs/domain/06_bible_dor.md` |
+| Bible Facet 17体制の完全リスト | △ 約10facet | v4/domain_model + facetテンプレ | `current/docs/domain/02_domain_model.md` + `template/core/bible/_facet_templates/` |
 | agents 18本 | △ 約7に集約 | 18本コピー | `current/agents/` |
 | skills 7本 | ✗ workflowに吸収 | 7本コピー | `current/skills/` |
 | rules 6本（file-growth/intake-flow/learning-capture/story-os-boundaries 欠落） | △ 2本のみ | 欠落4本コピー | `current/template/core/rules/` |
 | checklists 3本（packet_freeze / work_dramatic_principles 欠落） | △ 1本 | 2本コピー | `current/template/core/checklists/` |
 | adapter フォーマット（update_proposal / writing_pack / field_mapping） | ✗ 欠落 | 3種コピー | `current/adapter/` |
 | v4 review prompts 7本 | ✗ 欠落 | コピー | `current/adapter/review_prompts/` |
-| intake coverage checklist（86項目） | ✗ 欠落 | コピー | `current/docs/v4/05_intake_coverage_checklist.md` |
+| intake coverage checklist（86項目） | ✗ 欠落 | コピー | `current/docs/domain/05_intake_coverage_checklist.md` |
 | template-evolution meta prompts（session_start 他6本） | ✗ 欠落 | コピー | `current/prompts/` |
 | craft（rubric / framework lens） | ✗ 欠落 | コピー | `current/craft/` |
 | episode_pack 4テンプレ（実体） | △ 説明のみ | コピー | `template/overlay/unit-episode-pack/*.template.md` |
-| domain_model 56語 / storage_trinity / pipeline | ✗ 欠落 | v4コピー | `current/docs/v4/02,03,04` |
+| domain_model 56語 / storage_trinity / pipeline | ✗ 欠落 | v4コピー | `current/docs/domain/02,03,04` |
 
 ---
 
@@ -51,7 +51,7 @@
 ## 3. 残TODO（次セッションで詰める）
 
 - **参照パスの張り替え**: コピーした元STEファイル内の相対リンク（`proposal/2026-04-30-zero-base-v4/...` 等）は STE 前提。新 current 内で解決するよう貼り直す。
-- **重複の一本化**: `template/core/checklists/dor_dod.md`（私版）と `docs/dor_dod.md`（supersede stub→v4）と `docs/v4/06_bible_dor.md`（正本）が併存。正本を v4 に一本化し私版はstub化する。
+- **重複の一本化**: `template/core/checklists/dor_dod.md`（私版）と `docs/dor_dod.md`（supersede stub→v4）と `docs/domain/06_bible_dor.md`（正本）が併存。正本を v4 に一本化し私版はstub化する。
 - **kernel整合**: `template/core/kernel.template.yaml`（元の完全版に差替済）と私が書いた簡略 kernel の記述を全docで統一。
 - **agents/skills と takt facets の対応表**: 18 agents・7 skills が takt の persona/workflow のどこに写るかを明示（現状 `INHERITANCE.md` に骨子）。
 - **craft/lenses の中身**: 元 craft は README+lenses ディレクトリのみ。rubric 実体は evaluation-lab と接続して育てる。
@@ -74,7 +74,7 @@ find workbench/current -type f | sort
 workbench → StoryTemplateEvolutionLab 本体への統合（新 current = リポジトリ直下 `current/`、旧 current は `archive/2026-04-31-integreated/` に凍結）に伴う決定:
 
 1. **§3「参照パスの張り替え」は統合で解消**。`proposal/2026-04-30-zero-base-v4/`（07/08/10 含む完全版）が同一リポジトリに実在するため、53 件の参照はそのまま解決する。張り替え不要。
-2. **`current/docs/v4/` は削除**（proposal との完全重複だったため）。v4 ドキュメントの正本は `proposal/2026-04-30-zero-base-v4/` に一本化。`INHERITANCE.md`・`current/README.md` の参照を更新済み。
+2. **`current/docs/domain/` は削除**（proposal との完全重複だったため）。v4 ドキュメントの正本は `proposal/2026-04-30-zero-base-v4/` に一本化。`INHERITANCE.md`・`current/README.md` の参照を更新済み。
 3. **status 語彙を 11→12 値に拡張**: `rejected` と `genre_not_applicable` を両立。正本は `current/docs/status_vocabulary.md`（decision tree / 権限表 / 遷移ルールも rejected 対応済み）。「11 値」表記は current 全体で 12 値に更新済み。v4 02_domain_model Section 12（基底 11 値）は履歴として不変。
 4. **§4 の検証コマンドは旧パス**（workbench 前提）。統合後は `ls archive/2026-04-31-integreated` と `find current -type f | sort` で読み替える。`review-prompt.md` の対象パスも同様に読み替え（再監査時に更新）。
 

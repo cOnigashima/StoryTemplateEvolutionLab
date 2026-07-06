@@ -15,9 +15,9 @@
 
 ## 前提読み込み
 
-- `02_domain_model.md` Section 2-3（Unit / 格納域）と Section 4（Bible Facet）
-- `05_intake_coverage_checklist.md` Section 1（Kernel 11 項目の網羅項目）
-- `06_bible_dor.md` Section 1.2（Kernel 完全性条件）
+- `../../docs/domain/02_domain_model.md` Section 2-3（Unit / 格納域）と Section 4（Bible Facet）
+- `../../docs/domain/05_intake_coverage_checklist.md` Section 1（Kernel 11 項目の網羅項目）
+- `../../docs/domain/06_bible_dor.md` Section 1.2（Kernel 完全性条件）
 - `docs/kernel_spec.md`（既存 v3 の kernel 仕様、参考）
 - 検査対象の `story/kernel.yaml`
 - bible 側の同期ファイル: `bible/logline.md` `bible/promise.md` `bible/style-voice.md`

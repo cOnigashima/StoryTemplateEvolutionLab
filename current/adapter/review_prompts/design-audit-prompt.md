@@ -21,10 +21,10 @@ drafts ではなく、**Bible / Design / State の設計成果物そのもの** 
 
 ## 前提読み込み
 
-- `02_domain_model.md` 全部
-- `03_storage_trinity.md`（物理配置）
-- `05_intake_coverage_checklist.md`
-- `06_bible_dor.md`
+- `../../docs/domain/02_domain_model.md` 全部
+- `../../docs/domain/03_storage_trinity.md`（物理配置）
+- `../../docs/domain/05_intake_coverage_checklist.md`
+- `../../docs/domain/06_bible_dor.md`
 - 検査対象の `bible/` `design/` `state/` 全体
 
 ---

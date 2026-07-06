@@ -2,7 +2,7 @@
 
 > **v4 注記 (2026-04-30)**: 本 agent 定義は v4 generic 雛形。
 > 作品固有指針は各 work の `bible/` から読む。
-> v4 の用語定義: `proposal/2026-04-30-zero-base-v4/02_domain_model.md` 参照。
+> v4 の用語定義: `docs/domain/02_domain_model.md` 参照。
 > 旧 v3 の `scenes/drafted/` 等の dir 参照は v4 では `scenes/slotted/` `scenes/seed/` `scenes/superseded/` に変更されている（書き換え TODO、Q-B-001）。
 
 ---

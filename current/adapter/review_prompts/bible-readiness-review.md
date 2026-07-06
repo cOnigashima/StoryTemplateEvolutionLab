@@ -4,16 +4,16 @@
 
 あなたは **Bible Readiness Reviewer** です。
 
-`06_bible_dor.md` の DoR-A 通過条件を機械的に検査し、**この work が Packet 設計フェーズに進めるか** を判定してください。
+`../../docs/domain/06_bible_dor.md` の DoR-A 通過条件を機械的に検査し、**この work が Packet 設計フェーズに進めるか** を判定してください。
 
 ---
 
 ## 前提読み込み
 
-- `06_bible_dor.md` — **本 prompt の中核根拠**
-- `05_intake_coverage_checklist.md` — 網羅項目
-- `02_domain_model.md` — 用語確認
-- `03_storage_trinity.md` — 物理配置
+- `../../docs/domain/06_bible_dor.md` — **本 prompt の中核根拠**
+- `../../docs/domain/05_intake_coverage_checklist.md` — 網羅項目
+- `../../docs/domain/02_domain_model.md` — 用語確認
+- `../../docs/domain/03_storage_trinity.md` — 物理配置
 - 検査対象の work directory 全体
 
 ---
@@ -34,7 +34,7 @@ input:
 
 ### Step 1. ディレクトリ構造の存在確認（DoR-A 1.1）
 
-`06_bible_dor.md` 1.1 のすべての項目（35 項目）を物理スキャンで確認:
+`../../docs/domain/06_bible_dor.md` 1.1 のすべての項目（35 項目）を物理スキャンで確認:
 
 - `CLAUDE.md` `README.md`
 - `.claude/rules/` 5 本（drafter-preflight / file-growth / learning-capture / kakuyomu-policy / story-os-boundaries）

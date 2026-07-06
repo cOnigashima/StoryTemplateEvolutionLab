@@ -13,7 +13,7 @@
 | 元 STE current/ | new current/ | 関係 |
 |---|---|---|
 | docs/（kernel_spec, unit_taxonomy, status_vocabulary, layer_facet_map, dor_dod, vocabulary） | docs/（同名でコピー） | 仕様の正本。踏襲 |
-| （v4 proposal の 00-10） | `../proposal/2026-04-30-zero-base-v4/`（正本のまま参照） | STE 統合により docs/v4 コピーは廃止（2026-07-06） |
+| （v4 proposal の 00-06, 08-10） | `docs/domain/`（**生きた正本**。07 のみ `adapter/review_prompts/` が正本） | proposal 側は採用時スナップショットとして凍結（2026-07-06 決定） |
 | adapter/（prompt + format類） | adapter/（intake/writing は再編、format類はコピー） | 混在。format は踏襲 |
 | agents/（18） | agents/（18コピー） | 温存。TAKT persona へ写像予定 |
 | skills/（7） | skills/（7コピー） | 温存。TAKT workflow へ写像予定 |
@@ -31,5 +31,5 @@
 - **コア+オーバーレイ**は、元の「単一 v4 構造」を、作品ごとの執筆単位差（episode-pack / packet-2stage）を吸収できるよう2層化したもの。kernel・DoR/DoD・facet・status語彙といった芯は共通(core)に据える。
 
 ## 未完（COVERAGE 第3節に対応）
-DoR-DoD 正本の一本化（stub は `proposal/2026-04-30-zero-base-v4/06_bible_dor.md` を指す。checklists/dor_dod.md との関係整理が残） / agents↔facets 対応表 / craft rubric 実体化。
-※ 相対リンク張り替えは STE リポジトリ統合（2026-07-06）で解消 — `proposal/2026-04-30-zero-base-v4/` が同一リポジトリに実在するため、53 件の参照はそのまま生きる。
+DoR-DoD 正本の一本化（stub は `docs/domain/06_bible_dor.md` を指す。checklists/dor_dod.md との関係整理が残） / agents↔facets 対応表 / craft rubric 実体化。
+※ 53 件の相対参照は `docs/domain/`（current 内正本）へ張り替え済み（2026-07-06）。current は自己完結（proposal へは出典参照のみ）。

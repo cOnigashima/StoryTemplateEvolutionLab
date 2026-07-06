@@ -30,18 +30,18 @@
 |---|---|---|
 | 運用契約（人間ゲート・core/overlay・オントロジー） | `current/CLAUDE.md` | 2026-07-06 新設 |
 | 継承マップ（何が踏襲で何が新規か） | `current/INHERITANCE.md` | 2026-07-06 新設 |
-| 用語・ドメインモデル | `proposal/2026-04-30-zero-base-v4/02_domain_model.md` | current/docs/vocabulary.md は supersede stub |
-| 物理配置仕様 | `current/template/folder_structure.md` | core+overlay の完全ツリー。背景は `proposal/2026-04-30-zero-base-v4/03_storage_trinity.md` |
-| パイプライン | `proposal/2026-04-30-zero-base-v4/04_pipeline_overview.md` | |
-| 網羅チェックリスト | `proposal/2026-04-30-zero-base-v4/05_intake_coverage_checklist.md` | |
-| DoR | `proposal/2026-04-30-zero-base-v4/06_bible_dor.md` | current/docs/dor_dod.md は supersede stub |
+| 用語・ドメインモデル | `current/docs/domain/02_domain_model.md` | current/docs/vocabulary.md は supersede stub。proposal v4 は凍結スナップショット |
+| 物理配置仕様 | `current/template/folder_structure.md` | core+overlay の完全ツリー。背景は `current/docs/domain/03_storage_trinity.md` |
+| パイプライン | `current/docs/domain/04_pipeline_overview.md` | |
+| 網羅チェックリスト | `current/docs/domain/05_intake_coverage_checklist.md` | |
+| DoR | `current/docs/domain/06_bible_dor.md` | current/docs/dor_dod.md は supersede stub |
 | 検証 prompt | `current/adapter/review_prompts/` | v4 の 07_review_prompts 由来 |
 | Intake Adapter (生成) | `current/adapter/intake_adapter.md` | 2026-07-06 再編 |
 | kernel 雛形 | `current/template/core/kernel.template.yaml` | v4 schema |
 | Bootstrap 手順 | `current/work_init/new-work-bootstrap.md` | |
 | 置換の根拠 | `proposal/2026-07-06-workbench-ontology-loop/PROPOSAL.md` | オントロジー / TAKT ループ / core+overlay |
 
-「正本どっち?」と迷ったら `current/WORKFLOW.md` → `current/CLAUDE.md` から入る。ドメイン語彙の正本は引き続き `proposal/2026-04-30-zero-base-v4/00_README.md`。
+「正本どっち?」と迷ったら `current/WORKFLOW.md` → `current/CLAUDE.md` から入る。ドメイン語彙の正本は `current/docs/domain/00_README.md`（proposal v4 は採用時の凍結スナップショット）。
 
 ---
 
@@ -65,11 +65,11 @@
 
 3 作品（ia_society / ore_tueee_school_hell / fools-with-cheating）の walkthrough が用意されています:
 
-- `proposal/2026-04-30-zero-base-v4/08_pilot_validation/ia_society_zero_state.md`
-- `proposal/2026-04-30-zero-base-v4/08_pilot_validation/ore_tueee_school_hell_partial.md`
-- `proposal/2026-04-30-zero-base-v4/08_pilot_validation/fools_with_cheating_complete.md`
+- `current/docs/domain/08_pilot_validation/ia_society_zero_state.md`
+- `current/docs/domain/08_pilot_validation/ore_tueee_school_hell_partial.md`
+- `current/docs/domain/08_pilot_validation/fools_with_cheating_complete.md`
 
-実行手順は `proposal/2026-04-30-zero-base-v4/10_migration_plan.md` Phase 2 を参照。
+実行手順は `current/docs/domain/10_migration_plan.md` Phase 2 を参照。
 
 ---
 

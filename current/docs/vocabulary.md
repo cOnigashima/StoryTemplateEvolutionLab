@@ -1,6 +1,6 @@
 # Vocabulary
 
-> **SUPERSEDED — see** `proposal/2026-04-30-zero-base-v4/02_domain_model.md`
+> **SUPERSEDED — see** `docs/domain/02_domain_model.md`
 
 本ファイルは **v4 採用 (2026-04-30)** により supersede されました。
 
@@ -10,7 +10,7 @@
 56 語の Card 書式（英名 + Category + Definition + Role + Boundary + Examples + Lives in + Cousins）で記述されています。
 
 参照先:
-- `../../proposal/2026-04-30-zero-base-v4/02_domain_model.md`
+- `v4/02_domain_model.md`
 
 ## 旧版（履歴参照用）
 
@@ -26,4 +26,4 @@
 - Transformation Curve（Arc 同名衝突回避）を新設
 - Backlog の用法を「作業台帳」に絞り込み（旧 v1 用法は禁止）
 
-詳細は `proposal/2026-04-30-zero-base-v4/00_README.md` を参照。
+詳細は `docs/domain/00_README.md` を参照。

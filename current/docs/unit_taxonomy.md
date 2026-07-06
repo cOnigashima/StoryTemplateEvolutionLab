@@ -1,7 +1,7 @@
 # 単位階層
 
 > Manuscript / Part / Arc / Packet / Episode / Scene / Beat の入れ子。
-> 詳細は `proposal/2026-04-30-zero-base-v4/02_domain_model.md` Section 2 (単位軸 8 語)。
+> 詳細は `docs/domain/02_domain_model.md` Section 2 (単位軸 8 語)。
 > v3 履歴: `proposal/2026-04-29-domain-kernel-v3/02_unit_taxonomy.md`
 
 ---
@@ -104,4 +104,4 @@ Manuscript      作品全体
 - 物理位置: `bible/plot.md`（デフォルト）/ `bible/plot/`（肥大時）
 - Unit 軸（Manuscript / Part / Arc / Packet / Episode / Scene / Beat）には含めない
 
-詳細: `proposal/2026-04-30-zero-base-v4/02_domain_model.md` Section 2 + Section 4
+詳細: `docs/domain/02_domain_model.md` Section 2 + Section 4

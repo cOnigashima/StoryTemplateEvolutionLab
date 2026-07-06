@@ -24,18 +24,18 @@ StoryTemplateEvolution/
 
 - **構造・運用の正本**: `current/`（2026-07-06 に workbench 版で全面置換。旧 current は `archive/2026-04-31-integreated/` に凍結）
   - 置換の根拠: `proposal/2026-07-06-workbench-ontology-loop/PROPOSAL.md`
-- **ドメイン語彙の正本**: `proposal/2026-04-30-zero-base-v4/`（採用済み・現役）
+- **ドメイン語彙の正本**: `current/docs/domain/`（生きた正本。proposal/2026-04-30-zero-base-v4/ は採用時の凍結スナップショット）
 
 不明点があれば最初に読むべきもの:
 - `current/WORKFLOW.md` — 1 枚ガイド
 - `current/CLAUDE.md` — 運用契約（人間ゲート・core/overlay・オントロジー）
 - `current/INHERITANCE.md` — 継承マップ（何が踏襲で何が新規か）
-- `proposal/2026-04-30-zero-base-v4/02_domain_model.md` — 56 語の Card（用語の正本）
+- `current/docs/domain/02_domain_model.md` — 56 語の Card（用語の正本）
 - `current/template/folder_structure.md` — 物理配置（core+overlay）
 
 ### 3. supersede stub に注意
 
-`current/docs/vocabulary.md`、`current/docs/dor_dod.md` は **supersede stub**。これらは編集せず、内容は `proposal/2026-04-30-zero-base-v4/` を参照。
+`current/docs/vocabulary.md`、`current/docs/dor_dod.md` は **supersede stub**。これらは編集せず、内容は `current/docs/domain/` を参照。
 
 ### 4. 各 work と StoryTemplate の境界を守る
 

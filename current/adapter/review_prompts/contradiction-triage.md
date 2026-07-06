@@ -16,10 +16,10 @@
 
 ## 前提読み込み
 
-- `02_domain_model.md` Section 3（Continuity / Patch / Contradiction）
-- `04_pipeline_overview.md` Section 7.2（Contradiction Triage 回路）
-- `05_intake_coverage_checklist.md` Section 4（矛盾検出）
-- `06_bible_dor.md` Section 1.7（一貫性チェック）
+- `../../docs/domain/02_domain_model.md` Section 3（Continuity / Patch / Contradiction）
+- `../../docs/domain/04_pipeline_overview.md` Section 7.2（Contradiction Triage 回路）
+- `../../docs/domain/05_intake_coverage_checklist.md` Section 4（矛盾検出）
+- `../../docs/domain/06_bible_dor.md` Section 1.7（一貫性チェック）
 - `state/contradiction-log.yaml`（既存矛盾履歴）
 - `bible/promise.md`（最重要 gate）
 

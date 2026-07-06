@@ -1,6 +1,6 @@
 # Definition of Ready / Definition of Done
 
-> **SUPERSEDED — see** `proposal/2026-04-30-zero-base-v4/06_bible_dor.md`
+> **SUPERSEDED — see** `docs/domain/06_bible_dor.md`
 
 本ファイルは **v4 採用 (2026-04-30)** により supersede されました。
 
@@ -9,7 +9,7 @@
 DoR-A / DoR-B / DoR-C と DoD-E / DoD-P / DoD-A の正本は、本提案 v4 の `06_bible_dor.md` に移行しています。
 
 参照先:
-- `../../proposal/2026-04-30-zero-base-v4/06_bible_dor.md`
+- `v4/06_bible_dor.md`
 
 ## 旧版（履歴参照用）
 
@@ -24,4 +24,4 @@ DoR-A / DoR-B / DoR-C と DoD-E / DoD-P / DoD-A の正本は、本提案 v4 の 
 - 空欄ポリシー（missing / intentionally_blank / not_applicable / deferred / intentionally_hidden）の使い分け規則
 - 各 work での DoR-A 判定例（ia_society / ore_tueee / fools-with-cheating）
 
-詳細は `proposal/2026-04-30-zero-base-v4/00_README.md` を参照。
+詳細は `docs/domain/00_README.md` を参照。

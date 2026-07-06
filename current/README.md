@@ -10,9 +10,9 @@
 | `WORKFLOW.md` | ★1枚ガイド。全体像と1周の流れ | 更新 |
 | `CLAUDE.md` | AI運用契約（人間確認・共通化・統合・オントロジー） | 新規 |
 | `INHERITANCE.md` | 元STEからの継承マップ（何が踏襲で何が新規か） | 新規 |
-| `docs/` | 仕様の正本（kernel_spec / unit_taxonomy / status_vocabulary / layer_facet_map）。ドメインモデル詳細（56語 / storage_trinity / pipeline / DoR-DoD / intake checklist 86項目）は `../proposal/2026-04-30-zero-base-v4/` が正本 | ★STE踏襲 |
+| `docs/` | 仕様の正本（kernel_spec / unit_taxonomy / status_vocabulary / layer_facet_map）。ドメインモデル詳細（56語 / storage_trinity / pipeline / DoR-DoD / intake checklist 86項目）は `docs/domain/` が**生きた正本**（proposal v4 は凍結スナップショット） | ★STE踏襲 |
 | `work_init/new-work-bootstrap.md` | 新作の立ち上げ（current をコピー→別フォルダ） | 再編 |
-| `template/` | 新作がコピーする雛形（core＋overlay＋runtime）。完全構造は `template/folder_structure.md` | 再編＋踏襲 |
+| `template/` | 新作がコピーする雛形（core＋overlay＋runtime＋inbox＋synthesis）。完全構造は `template/folder_structure.md` | 再編＋踏襲 |
 | `adapter/` | チャット→セッション引き渡し（intake/writing/handoff/approval）＋フォーマット3種＋`review_prompts/`（7本） | 再編＋★STE踏襲 |
 | `agents/` | generic エージェント18本（plotter/drafter/critic…） | ★STE踏襲（TAKT facetへ写像予定） |
 | `skills/` | generic スキル7本（draft/critic/continuity/release…） | ★STE踏襲（同上） |
@@ -20,6 +20,7 @@
 | `craft/` | 創作原理の道具箱（rubric / framework lens） | ★STE踏襲 |
 | `takt/` | ループ実装。**暫定・別セッションで確定** | 新規 |
 | `tools/` | 検査ツール（ontology_check.py） | 新規 |
+| `learning/` | template 進化の決着記録（作品 retro からのフィードバック着地点） | ★STE踏襲（2026-07-06 復活） |
 
 ## 旧 StoryTemplateEvolution/current との対応
 

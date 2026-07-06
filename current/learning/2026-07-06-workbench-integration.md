@@ -6,7 +6,8 @@
 
 ## 統合時の決定（根拠は COVERAGE.md §5 と本ファイル）
 
-1. **docs/v4 コピーは削除** — `proposal/2026-04-30-zero-base-v4/` が同一リポジトリに実在するため正本を一本化。53 件の相対参照は統合により自然解決。
+1. **docs/domain の正本化（同日中に方針転換あり）** — 統合直後は「proposal/2026-04-30-zero-base-v4/ を正本、docs/domain コピーは削除」とした。しかし「凍結された proposal に生きた正本が住むと進化できない」矛盾（12値化で実証）を author が指摘し、**同日撤回**: `current/docs/domain/`（00-06,09）を生きた正本として復活、current 内の53参照を docs/domain へ張り替え、proposal v4 は採用時スナップショット（historic・凍結）に降格。教訓: **正本は current に住む。adopted proposal は根拠の凍結記録であって正本ではない**。
+   - さらに author 原則を確立: **「作品は current をコピーして独立するため、current は自己完結。必要なものは全て current に含め、proposal へは出典参照のみが向く」**。これに従い 08_pilot_validation / 10_migration_plan も docs/domain に取り込み（07 は adapter/review_prompts が正本）、docs/domain の 12値残骸（02 Section12 / 06 status×DoR表 / 05 集計欄）も修正。フォルダ名は「v4 では意味が通らない」ため `docs/v4/` → **`docs/domain/`** に改名（README で中身と出典を明示）。
 2. **status 語彙 11→12 値** — `rejected` と `genre_not_applicable` を両立。正本は `current/docs/status_vocabulary.md`。
 3. **痩せた4ファイルの復元マージ** — workbench 圧縮版で消えたディテールを archive から復元:
    - `drafter-preflight.md`（216→25→復元）: Multi-Pass Self-Review・meta欄テンプレ・focalizer規則
