@@ -1,0 +1,67 @@
+domain_synthesis:
+  source_context: ""
+  confirmed_design:
+    - id: ""
+      claim: ""
+      confidence: high | medium | low
+      source: ""
+  tentative_design:
+    - id: ""
+      claim: ""
+      reason_tentative: ""
+  open_questions:
+    - id: ""
+      question: ""
+      urgency: low | medium | high
+      blocks_workflow: false
+  contradictions:
+    - id: ""
+      claim: ""
+      conflicting_claims:
+        - ""
+      severity: low | medium | high
+      needs_author_decision: false
+  author_decisions_needed:
+    - id: ""
+      topic: ""
+      why_it_matters: ""
+      options:
+        A: ""
+        B: ""
+      recommendation: ""
+  storytemplate_mapping:
+    premise:
+      value: ""
+      status: filled | missing | tentative | deferred | intentionally_blank | intentionally_hidden | not_applicable | contradiction | needs_author_decision
+    reader_promise:
+      value: ""
+      status: ""
+    protagonist_vector:
+      want: ""
+      need: ""
+      wound_or_misbelief: ""
+      status: ""
+    conflict:
+      external: ""
+      internal: ""
+      relational: ""
+      status: ""
+    information_design:
+      must_be_clear:
+        - ""
+      intended_unknowns:
+        - ""
+      reveal_targets:
+        - ""
+      status: ""
+  framework_lens_candidates:
+    - lens_id: ""
+      why: ""
+      expected_output: ""
+      risk: ""
+  workflow_ready:
+    ready_for: not_ready | scene_card | episode_contract | packet_map | arc_map
+    missing:
+      - ""
+    risks:
+      - ""

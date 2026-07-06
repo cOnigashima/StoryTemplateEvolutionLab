@@ -1,0 +1,99 @@
+{
+  "version": "2.0",
+  "description": "Story Template v2 — artifact classification (template / samples / runtime_optional / deprecated)",
+  "artifacts": {
+    "template": [
+      "CLAUDE.md",
+      "README.md",
+      "template.manifest.json",
+      "story/promises.md",
+      "story/open-questions.md",
+      "story/design-debt.yaml",
+      "story/foreshadowing-map.md",
+      "story/intake/README.md",
+      "story/intake/raw-index.yaml",
+      "story/intake/digest-index.yaml",
+      "story/intake/provenance.yaml",
+      "story/intake/reflection-ledger.md",
+      "story/intake/raw/.gitkeep",
+      "story/intake/digests/.gitkeep",
+      "story/intake/digests/digest-template.md",
+      "story/seeds/README.md",
+      "story/seeds/seed-index.yaml",
+      "story/seeds/seed-template.md",
+      "story/canon-patch-proposals/README.md",
+      "bible/world.md",
+      "bible/characters.md",
+      "bible/rules.md",
+      "bible/glossary.md",
+      "bible/templates/**",
+      "arcs/series-overview.md",
+      "arcs/arc-01.md",
+      "packets/README.md",
+      "packets/templates/**",
+      "packets/exploring/.gitkeep",
+      "packets/scoped/.gitkeep",
+      "packets/frozen/.gitkeep",
+      "packets/drafting/.gitkeep",
+      "scenes/README.md",
+      "scenes/seed/scene-template.md",
+      "scenes/slotted/.gitkeep",
+      "scenes/superseded/.gitkeep",
+      "drafts/README.md",
+      "drafts/.gitkeep",
+      "reviews/README.md",
+      "reviews/typed-review-template.md",
+      "reviews/bridge-review-template.md",
+      "reviews/seed-to-macro-template.md",
+      "reviews/continuity-review-template.md",
+      "reviews/persona-review-template.md",
+      "reviews/approval-template.md",
+      "reviews/packet-freeze-template.md",
+      "learning/README.md",
+      "learning/current-focus.yaml",
+      "learning/.gitkeep",
+      "craft/**",
+      "prompts/**",
+      "approved/.gitkeep",
+      "published/.gitkeep",
+      "community/**",
+      ".claude/agents/**",
+      ".claude/skills/**",
+      ".claude/rules/**"
+    ],
+    "samples": [
+      "samples/**"
+    ],
+    "runtime_optional": [
+      "actions/**",
+      "campaigns/**",
+      "telemetry/**",
+      "story/job-packets/**",
+      "story/run-ledger/**",
+      "story/release-candidates/**"
+    ],
+    "deprecated": [
+      "queue/**",
+      "backlog/**"
+    ]
+  },
+  "init_rules": {
+    "samples_delete_on_start": true,
+    "runtime_optional_generate_on_demand": true,
+    "deprecated_block_reference": true,
+    "required_sections_on_start": [
+      "CLAUDE.md",
+      "story/promises.md",
+      "bible/rules.md",
+      "arcs/arc-01.md",
+      "packets/templates/packet-template.yaml",
+      "learning/current-focus.yaml"
+    ]
+  },
+  "notes": {
+    "template": "初期化時に必ず存在するファイル群。空であっても存在そのものが契約。",
+    "samples": "学習用のサンプル。作品開始時に削除する。",
+    "runtime_optional": "必要になった作品のみ opt-in で生成。デフォルトで作らないことで one-man-statefall init 事故を防ぐ。",
+    "deprecated": "参照禁止。既存 repo の互換のためファイル自体は残しても良いが、新規作品には作らない。"
+  }
+}

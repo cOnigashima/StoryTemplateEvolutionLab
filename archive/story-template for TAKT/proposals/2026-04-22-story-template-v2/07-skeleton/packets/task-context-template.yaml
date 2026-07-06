@@ -1,0 +1,63 @@
+# task-context.yaml
+# drafter/critic に渡す最小限の文脈圧縮パック。ep 毎に 1 つ作る。
+# 配置: drafts/packet-NNN/epNN/task-context.yaml
+
+version: 1
+
+# 基本情報
+ep: epNN
+packet: packet-NNN-{slug}
+arc: arc-NN
+working_phase: drafting  # drafting | self-review | typed-review | approval
+
+# focal character
+focal_character:
+  name: "{name}"
+  mode: "third-limited"    # third-limited | third-omniscient | third-multiple | first | epistolary
+
+# 直前からの carryover（Gate 0 用）
+carryover_from_prev_ep:
+  - source_ep: ep(NN-1)
+    item: "..."
+    source_line_hint: "..."
+
+# packet 要件マッピング（Gate A 用）
+packet_requirements:
+  - id: REQ-NN
+    source_section: "disclose / withhold / guardrails / episode_roles / ..."
+    implementation_beat: "beat-N"
+    implementation_memo: "..."
+
+# 活性 motif（作品に monitoring-dictionary がある場合）
+canon_motifs_active: []
+# - name: "motif-A"
+#   plan_stage: 2
+#   plan_location: "beat-3"
+
+# withhold / disclose キーワード（review 用）
+withhold_keywords: []
+disclose_keywords: []
+
+# 伏線
+related_foreshadow_ids: []
+# - PF-042
+
+# 参照 seed
+referenced_seeds: []
+# - seed-042-magic-system-rebuild
+
+# Gate C（クライマックス前振りチェック）
+climax_check:
+  has_climax: false
+  climax_form: null            # 文字列で形を記述
+  softer_version_location: null  # 散文で既に置いた場所
+  resolution: ok | add_foreshadow | delay_climax | intentional_first_shock
+
+# 予想 scene 構成
+scene_plan:
+  - scene_id: S-1
+    purpose: "..."
+    goal_conflict_disaster: "..."
+  - scene_id: S-2
+    purpose: "..."
+    reaction_dilemma_decision: "..."

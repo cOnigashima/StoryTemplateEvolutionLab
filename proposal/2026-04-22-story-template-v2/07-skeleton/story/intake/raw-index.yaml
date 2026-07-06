@@ -1,0 +1,20 @@
+# story/intake/raw-index.yaml
+# raw 入力 1 件ごとに 1 entry を追加する。
+
+version: 1
+entries: []
+
+# entry のフォーマット例:
+#   - id: raw-YYYYMMDD-{source}-{slug}
+#     date: YYYY-MM-DD
+#     source: chatgpt-pro | claude | human-brainstorm | doc-import | ...
+#     model: model-name
+#     prompt_ref: prompts/intake/... (使った prompt への参照、なければ null)
+#     path: story/intake/raw/YYYY-MM-DD-{slug}/
+#     size_bytes: N
+#     topics: [arc-XX, bible-section, ...]
+#     digest_status: pending | in_progress | done
+#     digest_ref: story/intake/digests/YYYY-MM-DD-{slug}.md
+#     seed_candidates: [seed-NNN-{slug}, ...]
+#     notes: |
+#       short summary of context

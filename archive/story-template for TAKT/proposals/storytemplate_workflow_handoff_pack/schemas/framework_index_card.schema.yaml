@@ -1,0 +1,41 @@
+framework_index_card:
+  framework_id: ""
+  name: ""
+  summary: ""
+  source_notes: ""
+  best_for:
+    - ""
+  not_good_for:
+    - ""
+  use_as:
+    - planning_lens
+    - expansion_lens
+    - diagnosis_lens
+    - genre_lens
+    - revision_lens
+    - style_lens
+  adapter_outputs:
+    - premise
+    - reader_promise
+    - scene_card
+    - acceptance_contract
+    - review_checklist
+    - ledger_target
+    - arc_map
+    - packet_map
+  risks:
+    - ""
+  when_to_apply:
+    - ""
+  when_not_to_apply:
+    - ""
+  related_workflows:
+    - episode_draft_tournament
+    - packet_assembly_review
+    - arc_through_review
+    - part_through_review
+  project_override_conflicts:
+    - ""
+  retro_questions:
+    - ""
+  status: candidate | active | archived | rejected

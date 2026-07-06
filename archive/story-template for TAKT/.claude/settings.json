@@ -1,0 +1,37 @@
+{
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
+  },
+  "permissions": {
+    "allow": [
+      "Read",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(mkdir:*)",
+      "Write(story/*)",
+      "Write(packets/*)",
+      "Write(scenes/*)",
+      "Write(reviews/*)",
+      "Write(learning/*)",
+      "Write(community/*)",
+      "Write(actions/*)",
+      "Write(queue/*)",
+      "Write(backlog/*)",
+      "Write(drafts/*)",
+      "Write(approved/*)",
+      "Write(arcs/*)",
+      "Edit(story/*)",
+      "Edit(packets/*)",
+      "Edit(scenes/*)",
+      "Edit(reviews/*)",
+      "Edit(learning/*)",
+      "Edit(community/*)",
+      "Edit(actions/*)",
+      "Edit(queue/*)",
+      "Edit(backlog/*)",
+      "Edit(drafts/*)",
+      "Edit(approved/*)",
+      "Edit(arcs/*)"
+    ]
+  }
+}

@@ -1,0 +1,246 @@
+# Field Mapping Template
+#
+# 既存のフィールド名（チャットや既存資料で使われている用語）が、
+# bible/design/state/writing のどこに行くかの正本表。
+#
+# 新規作品で使うときは、本ファイルをコピーして作品固有のフィールドを追記する。
+# renji の例は ../../story-template for TAKT/works/renji/.adapter/storytemplate_field_mapping.yaml
+
+field_mappings:
+
+  # ===== 作品の核 =====
+
+  - field_name: premise
+    layer: bible
+    target_file: bible/premise.md
+    is_required: true
+    used_by: [writer, reviewer, judge, ledger_keeper, human]
+    status_allowed: [filled, tentative, needs_author_decision]
+    notes: 変更は canon patch 経由
+
+  - field_name: reader_promise
+    layer: bible
+    target_file: bible/reader_promise.md
+    is_required: true
+    used_by: [writer, reviewer, judge]
+
+  - field_name: theme
+    layer: bible
+    target_file: bible/theme.md
+    is_required: true
+    used_by: [writer, reviewer]
+
+  - field_name: genre
+    layer: bible
+    target_file: bible/genre.md
+    is_required: true
+    used_by: [writer, reviewer]
+
+  - field_name: tone_post_read
+    layer: bible
+    target_file: bible/genre.md
+    is_required: false
+    used_by: [writer, reviewer]
+
+  # ===== 文体・声 =====
+
+  - field_name: pov_policy
+    layer: bible
+    target_file: bible/style_guide.md
+    is_required: true
+    used_by: [writer, reviewer]
+
+  - field_name: narration_voice_samples
+    layer: bible
+    target_file: bible/style_guide.md
+    is_required: false
+
+  - field_name: forbidden_words
+    layer: bible
+    target_file: bible/style_guide.md
+    is_required: false
+
+  - field_name: sensitive_handling
+    layer: bible
+    target_file: bible/style_guide.md
+    is_required: false
+
+  # ===== キャラ =====
+
+  - field_name: character_definition
+    layer: bible
+    target_file: bible/characters/{ch_slug}.md
+    is_required: true
+
+  - field_name: character_arc
+    layer: bible
+    target_file: bible/characters/individual/{ch_slug}.md
+    is_required: false
+
+  - field_name: character_state
+    layer: state
+    target_file: state/character_states.yaml
+    is_required: true   # episode draft の前に必要
+
+  # ===== 世界 =====
+
+  - field_name: world_locations
+    layer: bible
+    target_file: bible/world/locations.md
+
+  - field_name: world_rules
+    layer: bible
+    target_file: bible/world/rules.md
+
+  - field_name: ability_specification
+    layer: bible
+    target_file: bible/world/{name}.md   # 作品固有
+
+  - field_name: institutional_details
+    layer: bible
+    target_file: bible/world/{name}.md   # 作品固有
+
+  # ===== プロット =====
+
+  - field_name: arc_outline
+    layer: bible
+    target_file: bible/plot/arc_map.md
+
+  - field_name: episode_plan
+    layer: bible
+    target_file: bible/plot/episode_plan.md
+
+  - field_name: scene_card_master
+    layer: bible
+    target_file: bible/plot/scene_cards.md
+
+  - field_name: timeline_master
+    layer: bible
+    target_file: bible/plot/timeline_master.md
+
+  - field_name: timeline_dynamic
+    layer: state
+    target_file: state/timeline.yaml
+
+  # ===== 章末資料 =====
+
+  - field_name: in_world_documents
+    layer: bible
+    target_file: bible/in_world_documents/samples.md
+
+  - field_name: in_world_documents_placement
+    layer: bible
+    target_file: bible/in_world_documents/placement_table.md
+
+  # ===== 伏線 =====
+
+  - field_name: foreshadowing_intent
+    layer: bible
+    target_file: bible/plot/foreshadowing_map.md
+
+  - field_name: foreshadowing_status
+    layer: state
+    target_file: state/foreshadowing.yaml
+
+  # ===== Design =====
+
+  - field_name: editorial_notes
+    layer: design
+    target_file: design/editorial_notes.md
+
+  - field_name: project_principles
+    layer: design
+    target_file: design/project_principles.md
+    notes: 強い拘束力。kernel default や genre overlay より優先
+
+  - field_name: critical_intent
+    layer: design
+    target_file: design/critical_intent.md
+
+  - field_name: open_design_questions
+    layer: design
+    target_file: design/open_design_questions.md
+
+  - field_name: author_decisions
+    layer: design
+    target_file: design/author_decisions.md
+
+  - field_name: checklists
+    layer: design
+    target_file: design/checklists.md
+
+  - field_name: idea_provenance
+    layer: design
+    target_file: design/idea_provenance.md
+    notes: trace 用。勝手に bible に流さない
+
+  # ===== State =====
+
+  - field_name: open_questions_runtime
+    layer: state
+    target_file: state/open_questions.yaml
+
+  - field_name: continuity_notes
+    layer: state
+    target_file: state/continuity_notes.md
+
+  - field_name: rejected_ideas
+    layer: state
+    target_file: state/rejected_ideas.md
+    notes: canon に流入しないための裏台帳
+
+  # ===== Writing pack（派生） =====
+
+  - field_name: episode_brief
+    layer: writing
+    target_file: writing/episode_packs/{ep_id}/episode_brief.md
+    notes: bible/plot/episode_plan.md から転写
+
+  - field_name: scene_card_pack
+    layer: writing
+    target_file: writing/episode_packs/{ep_id}/scene_card.md
+    notes: bible/plot/scene_cards.md から転写
+
+  - field_name: context_pack
+    layer: writing
+    target_file: writing/episode_packs/{ep_id}/context_pack.md
+    notes: bible / state からその ep に必要な分だけ抽出
+
+  - field_name: acceptance_checklist
+    layer: writing
+    target_file: writing/episode_packs/{ep_id}/acceptance_checklist.md
+    notes: bible/plot, design/editorial_notes, state から ep 単位で抽出
+
+# ===== 作品固有 field の追加方法 =====
+#
+# renji の場合、以下のような作品固有 field を追加していた:
+#
+#   - field_name: three_layer_principle
+#     layer: bible
+#     target_file: bible/world/three_layer_principle.md
+#     used_by: [writer, reviewer, judge]
+#
+#   - field_name: three_layer_status
+#     layer: state
+#     target_file: state/three_layer_status.yaml
+#
+# 作品固有 field は本テンプレートに**直接書かず**、各作品の .adapter/ にコピーした
+# field_mapping.yaml に追記すること。
+
+# ===== Layer 帰属チェックリスト =====
+#
+# Q1. 書く前に決まり、変更には canon patch が必要か?
+#   Yes → bible
+#   No  → Q2
+#
+# Q2. まだ揺れていて、author 判断待ち or 設計負債か?
+#   Yes → design
+#   No  → Q3
+#
+# Q3. 制作中に動くものか?
+#   Yes → state
+#   No  → Q4
+#
+# Q4. 1 単位の執筆指示か?
+#   Yes → writing
+#   No  → 再検討

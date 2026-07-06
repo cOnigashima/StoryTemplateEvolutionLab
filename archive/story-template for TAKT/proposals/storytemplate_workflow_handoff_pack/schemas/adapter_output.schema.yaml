@@ -1,0 +1,63 @@
+adapter_output:
+  target_unit: episode | packet | arc | part | manuscript
+  target_id: ""
+  source_summary:
+    from_chat:
+      - ""
+    from_storytemplate:
+      - ""
+    from_framework_lens:
+      - ""
+    from_ledger:
+      - ""
+  scene_card:
+    purpose:
+      - ""
+    entry_state: {}
+    exit_state: {}
+    must_include:
+      - ""
+    must_not_include:
+      - ""
+    intended_unknowns:
+      - ""
+    must_be_clear:
+      - ""
+    reader_target:
+      - ""
+    style_constraints: {}
+    dependencies:
+      - ""
+  acceptance_contract:
+    must_satisfy:
+      - ""
+    must_not_violate:
+      - ""
+    intended_unknowns:
+      - ""
+    acceptable_ambiguity:
+      - ""
+    must_be_clear:
+      - ""
+    auto_fix_allowed:
+      - ""
+    human_required_if:
+      - ""
+    ignore_or_defer:
+      - ""
+  review_checklist:
+    - id: ""
+      purpose: ""
+      scope: ""
+  ledger_update_targets:
+    - type: canon_fact | timeline | character_state | foreshadowing | open_question | author_decision | rejected_idea
+      expected_update: ""
+  risks:
+    - id: ""
+      severity: low | medium | high
+      claim: ""
+      needs_human: false
+  workflow_ready:
+    status: ready | ready_with_risks | not_ready
+    missing:
+      - ""

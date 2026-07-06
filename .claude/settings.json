@@ -1,0 +1,7 @@
+{
+  "project_name": "StoryTemplateEvolution",
+  "project_description": "AI 支援長編小説制作のための次世代 Story Template の開発リポジトリ",
+  "default_agent": "template-architect",
+  "v4_adopted": true,
+  "v4_adopted_date": "2026-04-30"
+}

@@ -1,0 +1,17 @@
+# story/intake/digest-index.yaml
+# digest 1 本毎に 1 entry。
+
+version: 1
+entries: []
+
+# entry のフォーマット例:
+#   - id: digest-YYYYMMDD-{slug}
+#     date: YYYY-MM-DD
+#     raw_refs: [raw-YYYYMMDD-{slug}]
+#     path: story/intake/digests/YYYY-MM-DD-{slug}.md
+#     topics: [...]
+#     seed_candidates_total: N
+#     seed_candidates_extracted: N
+#     status: draft | reviewed | seed_extracted | completed
+#     notes: |
+#       short summary

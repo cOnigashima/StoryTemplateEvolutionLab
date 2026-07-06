@@ -1,0 +1,101 @@
+# Update Proposal Format（汎用版）
+#
+# Intake Adapter の出力。
+# bible / design / state への反映「案」。
+# 必ず human approval を経て、承認分のみ反映される。
+
+update_proposal:
+  proposal_id: ""           # YYYY-MM-DD-{slug}
+  proposal_date: ""         # YYYY-MM-DD
+  source_session: ""        # synthesis/session_digests/{...}.md
+  proposer: ""              # claude / author 等
+
+  summary: ""               # 1〜3 行: この proposal が何をしようとしているか
+
+  bible_changes:
+    - target_file: ""       # 例: bible/characters/protagonist.md
+      operation: create | append | update | replace_section | delete
+      section: ""           # update / replace_section の場合のみ
+      content: |
+        （提案内容の本文）
+      status: filled | tentative | needs_author_decision
+      source_items: ["C-001"]  # session_digest 内 ID 参照
+      reason: ""
+      risk_if_accepted: ""
+      risk_if_rejected: ""
+      conflicts_with:
+        - file: ""
+          existing_claim: ""
+          severity: low | medium | high
+      depends_on: []
+      auto_apply_allowed: false   # bible は基本 false
+      requires_review_by: [author, plotter]
+
+  design_changes:
+    - target_file: ""
+      operation: create | append | update
+      content: |
+        （提案内容）
+      source_items: []
+      auto_apply_allowed: true   # design は基本 true（仮の置場）
+
+  state_changes:
+    - target_file: ""
+      operation: append | update
+      content_yaml: |
+        - id: ""
+          ...
+      source_items: []
+      auto_apply_allowed: true   # state seed は通常 true
+
+  new_files_proposed:
+    - path: ""
+      reason: ""
+      template_to_use: ""        # templates/{path} 参照
+      initial_content_outline: ""
+
+  split_proposed:
+    - source_file: ""
+      reason: ""
+      proposed_split:
+        - new_file: ""
+          contains: ""
+
+  rejected_recorded:
+    - id: "R-001"
+      target_file: state/rejected_ideas.md
+      content: ""
+      reason: ""
+
+  contradictions_for_author:
+    - id: "X-001"
+      claim_a: ""
+      claim_b: ""
+      source_a: ""
+      source_b: ""
+      severity: low | medium | high
+      proposed_resolution_options:
+        A: ""
+        B: ""
+      recommendation: ""
+      auto_apply_allowed: false   # 必ず false
+
+  overall:
+    proposal_count: 0
+    auto_apply_count: 0
+    human_required_count: 0
+    high_risk_count: 0
+    blocks_writing_for: []
+
+  approval:
+    status: pending | partial | approved | rejected | revised
+    approved_items: []
+    rejected_items: []
+    revised_items:
+      - id: ""
+        original: ""
+        revised: ""
+        reason: ""
+    notes: ""
+    approved_by: ""
+    approved_at: ""

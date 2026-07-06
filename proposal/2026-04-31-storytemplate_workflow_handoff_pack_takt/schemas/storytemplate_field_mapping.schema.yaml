@@ -1,0 +1,56 @@
+field_mapping_schema:
+  field_name: ""
+  description: ""
+  example: ""
+  current_usage: ""
+  is_required: true
+  required_stage:
+    - planning
+    - drafting
+    - review
+    - judge
+  layer:
+    enum:
+      - universal_kernel
+      - genre_overlay
+      - project_override
+      - workflow_input
+      - review_checklist
+      - ledger_target
+      - framework_lens
+      - unclear
+  used_by:
+    - human
+    - adapter
+    - writer
+    - reviewer
+    - selection_synthesis
+    - reviser
+    - judge
+    - ledger_keeper
+  status_support:
+    - filled
+    - missing
+    - tentative
+    - deferred
+    - intentionally_blank
+    - intentionally_hidden
+    - not_applicable
+    - genre_not_applicable
+    - project_override
+    - contradiction
+    - needs_author_decision
+  maps_to:
+    scene_card:
+      - ""
+    acceptance_contract:
+      - ""
+    judge_contract:
+      - ""
+    review_checklist:
+      - ""
+    ledger:
+      - ""
+  risk_if_missing: ""
+  risk_if_forced: ""
+  notes: ""

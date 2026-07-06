@@ -1,0 +1,18 @@
+# Timeline（執筆中タイムライン）
+#
+# bible/plot/timeline_master.md = 静的マスター（設計時の予定）
+# 本ファイル = 執筆中に prose で実装された事実の動的台帳
+#
+# ep 公開ごとに ledger-keeper が追加。
+
+timeline:
+  # 形式:
+  # - id: timeline-XXX
+  #   ep: ep001
+  #   when: ""          # 物語内時刻
+  #   what: ""          # 起きたこと（散文根拠）
+  #   significance: ""  # 物語的意味
+  #   sources:
+  #     - drafts/episodes/ep001-{slug}.md
+  #     - approved/ep001-{slug}.md
+  []

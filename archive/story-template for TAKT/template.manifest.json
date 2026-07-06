@@ -1,0 +1,127 @@
+{
+  "templateId": "story-template",
+  "templateVersion": 2,
+  "notes": "Factory-managed manifest split into Claude workspace assets and runtime directory contracts.",
+  "managedAssets": {
+    "notes": "Managed assets are safe to backfill when missing, but local content drift should be reviewed before overwrite.",
+    "rules": [
+      {
+        "path": ".claude",
+        "kind": "directory",
+        "policy": "copy_if_missing",
+        "contentPolicy": "track"
+      },
+      {
+        "path": "CLAUDE.md",
+        "kind": "file",
+        "policy": "copy_if_missing",
+        "contentPolicy": "ignore"
+      }
+    ]
+  },
+  "runtimeContracts": [
+    {
+      "path": "actions",
+      "kind": "directory",
+      "requirement": "required",
+      "provisioning": "template_seeded",
+      "role": "Action packet state machine root.",
+      "readers": [
+        "story-os",
+        "action-executor",
+        "growth/activity-plan"
+      ]
+    },
+    {
+      "path": "actions/approved",
+      "kind": "directory",
+      "requirement": "required",
+      "provisioning": "template_seeded",
+      "role": "Approved action packets consumed by action execution."
+    },
+    {
+      "path": "backlog/used",
+      "kind": "directory",
+      "requirement": "optional_lazy",
+      "provisioning": "lazy_create",
+      "role": "Archive for consumed backlog items moved by jobs."
+    },
+    {
+      "path": "drafts/used",
+      "kind": "directory",
+      "requirement": "optional_lazy",
+      "provisioning": "lazy_create",
+      "role": "Archive for consumed draft inputs moved by jobs."
+    },
+    {
+      "path": "story/progress.yaml",
+      "kind": "file",
+      "requirement": "optional",
+      "provisioning": "work_specific",
+      "role": "Per-work writing progress source for the dashboard card.",
+      "readers": [
+        "writing-progress"
+      ],
+      "note": "Missing file only disables the progress card; Story OS keeps working."
+    },
+    {
+      "path": "story/job-packets/queued",
+      "kind": "directory",
+      "requirement": "optional_lazy",
+      "provisioning": "lazy_create",
+      "role": "Actual queued StoryJobPacket storage.",
+      "readers": [
+        "story-run-ledger"
+      ]
+    },
+    {
+      "path": "telemetry/story-runs",
+      "kind": "directory",
+      "requirement": "optional_lazy",
+      "provisioning": "lazy_create",
+      "role": "Story run ledger JSON output.",
+      "readers": [
+        "story-run-ledger"
+      ]
+    },
+    {
+      "path": "community/discovery",
+      "kind": "directory",
+      "requirement": "optional_lazy",
+      "provisioning": "lazy_create",
+      "role": "Growth OS discovery snapshots.",
+      "readers": [
+        "growth/kakuyomu-discovery"
+      ]
+    },
+    {
+      "path": "community/plans",
+      "kind": "directory",
+      "requirement": "optional_lazy",
+      "provisioning": "lazy_create",
+      "role": "Growth OS activity-plan snapshots.",
+      "readers": [
+        "growth/activity-plan"
+      ]
+    },
+    {
+      "path": "campaigns",
+      "kind": "directory",
+      "requirement": "optional_lazy",
+      "provisioning": "lazy_create",
+      "role": "Campaign packet output root.",
+      "readers": [
+        "growth/campaign-service"
+      ],
+      "note": "Template may seed this directory, but campaign generation can create it on demand."
+    },
+    {
+      "path": "queue",
+      "kind": "directory",
+      "requirement": "legacy_projection",
+      "provisioning": "template_seeded",
+      "role": "Historical projection layer kept for human orientation.",
+      "note": "Runtime queue lives under story/job-packets/queued."
+    }
+  ]
+}

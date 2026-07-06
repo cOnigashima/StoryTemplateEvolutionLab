@@ -1,0 +1,13 @@
+{
+  "id": "like-template",
+  "title": "reading evidence 付き like packet",
+  "channel": "kakuyomu",
+  "action_kind": "like",
+  "approval_required": false,
+  "auto_runnable": true,
+  "reason": "読書証拠が揃っている場合のみ自動実行する",
+  "target_label": "neighbor work note",
+  "evidence_refs": [
+    "community/reading-notes/"
+  ]
+}

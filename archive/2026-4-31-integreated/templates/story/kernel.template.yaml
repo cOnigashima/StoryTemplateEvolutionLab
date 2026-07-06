@@ -1,0 +1,182 @@
+# kernel.template.yaml — v4 schema
+# 新規作品の story/kernel.yaml に copy して使う
+# 11 項目の MUST / SHOULD / MAY を埋める
+# status 11 値: filled / tentative / deferred / intentionally_blank /
+#               intentionally_hidden / not_applicable / project_override /
+#               contradiction / needs_author_decision / missing / rejected
+
+kernel:
+  schema_version: "v4"
+  work_id: ""                                  # MUST: 作品 slug（kebab-case）
+  last_updated: ""                             # MUST: ISO 日付 (YYYY-MM-DD)
+
+  # ===========================================================================
+  # 1. Logline (kernel #1) — 1-2 文の作品同定要約
+  # MUST: value, status
+  # 旧称 "premise" は v4 で deprecated
+  # ===========================================================================
+  logline:
+    value: ""                                  # 例: "147 の記録官が、最後に書かない一行を選ぶ話"
+    status: missing                            # filled | tentative | needs_author_decision | missing
+    source: ""                                 # 出典 trace 例: "inbox/.../chat-2026-04-30.md:L42"
+
+  # ===========================================================================
+  # 2. Promise (kernel #2) — 読者への約束、3 項目以上
+  # MUST: items（最低 3）、各 item の claim と status
+  # ===========================================================================
+  promise:
+    items:
+      - id: "p1"
+        claim: ""                              # 例: "和解で閉じない"
+        status: missing
+        evidence_target: ""                    # どの packet/arc で実装するか、例: "arc-03"
+        source: ""
+      - id: "p2"
+        claim: ""
+        status: missing
+        evidence_target: ""
+        source: ""
+      - id: "p3"
+        claim: ""
+        status: missing
+        evidence_target: ""
+        source: ""
+
+  # ===========================================================================
+  # 3. Protagonist Vector (kernel #3) — 主人公の want/need/wound
+  # MUST: primary_protagonist.character_id, want, need
+  # SHOULD: wound_or_misbelief
+  # ===========================================================================
+  protagonist_vector:
+    primary_protagonist:
+      character_id: ""                         # MUST: 例 "shiya"
+      want:
+        value: ""                              # MUST: 表面的に求めているもの
+        status: missing
+      need:
+        value: ""                              # MUST: 真に必要としているもの（want と異なることが多い）
+        status: missing
+      wound_or_misbelief:
+        value: ""                              # SHOULD
+        status: missing
+    secondary_protagonists: []                 # 任意
+
+  # ===========================================================================
+  # 4. Conflict (kernel #4) — 対立軸
+  # MUST: external（最低 1 軸）
+  # SHOULD: internal, relational
+  # ===========================================================================
+  conflict:
+    external:
+      value: ""                                # MUST
+      status: missing
+    internal:
+      value: ""                                # SHOULD
+      status: missing
+    relational:
+      value: ""                                # SHOULD
+      status: missing
+
+  # ===========================================================================
+  # 5. Stakes (kernel #5) — 失敗・成功時の代償
+  # MUST: if_protagonist_fails, why_reader_cares
+  # SHOULD: if_protagonist_succeeds_but_pays
+  # ===========================================================================
+  stakes:
+    if_protagonist_fails: ""                   # MUST
+    if_protagonist_succeeds_but_pays: ""       # SHOULD
+    why_reader_cares: ""                       # MUST
+    status: missing
+
+  # ===========================================================================
+  # 6. Change Model (kernel #6) — 変化曲線
+  # MUST: arc_shape, direction_of_change, end_state_relative_to_start
+  # ===========================================================================
+  change_model:
+    arc_shape: ""                              # growth | fall | flat | circular | mixed
+    direction_of_change: ""                    # 何から何へ
+    end_state_relative_to_start: ""
+    status: missing
+
+  # ===========================================================================
+  # 7. Causality (kernel #7) — 因果方針
+  # MUST: time_order_policy, knowledge_state_monotonicity
+  # SHOULD: rationalization_vocabulary_policy
+  # ===========================================================================
+  causality:
+    time_order_policy: ""                      # linear | nonlinear | multi_pov | flashback_heavy
+    knowledge_state_monotonicity: ""           # strict | relaxed | per_pov
+    rationalization_vocabulary_policy: ""      # avoid | allowed_with_check
+    status: missing
+
+  # ===========================================================================
+  # 8. Information Design (kernel #8) — 情報開示・非開示
+  # MUST: must_be_clear（1+ 項目）
+  # SHOULD: intended_unknowns, disclose_policy, withhold_policy
+  # ===========================================================================
+  information_design:
+    must_be_clear: []                          # MUST: 読者に必ず伝わるべき事実
+    intended_unknowns:                         # SHOULD: 意図的に隠す情報（裏に値あり）
+      # - id: "h1"
+      #   claim: ""
+      #   intended_reveal_unit: episode
+      #   intended_reveal_id: "ep08"
+      #   visible_to: [author, plotter, drafter]
+      #   hidden_from: [reader]
+    disclose_policy: ""                        # SHOULD
+    withhold_policy: ""                        # SHOULD
+    status: missing
+
+  # ===========================================================================
+  # 9. Emotional Arc (kernel #9) — 感情曲線・cadence
+  # MUST: overall_curve, target_reader_emotion_at_end
+  # SHOULD: cadence_baseline
+  # ===========================================================================
+  emotional_arc:
+    overall_curve: ""                          # MUST
+    target_reader_emotion_at_end: ""           # MUST
+    cadence_baseline:
+      tension_to_release_ratio: ""             # SHOULD: 例 "6:4"
+    status: missing
+
+  # ===========================================================================
+  # 10. Style Voice (kernel #10) — 文体・声
+  # MUST: pov, tense
+  # SHOULD: register, sentence_length_baseline, narrative_temperature, forbidden_words
+  # MAY: style_references
+  # ===========================================================================
+  style_voice:
+    pov: ""                                    # MUST: first_person | third_person_limited |
+                                               #       third_person_omniscient | epistolary | mixed
+    tense: ""                                  # MUST: present | past | mixed
+    register: ""                               # SHOULD: literary | conversational | rough | formal | mixed
+    sentence_length_baseline: ""               # SHOULD: short | medium | long | varied
+    narrative_temperature: ""                  # SHOULD: cold | neutral | warm | hot
+    forbidden_words: []                        # SHOULD
+    style_references: []                       # MAY
+    status: missing
+
+  # ===========================================================================
+  # 11. Unit Tree (kernel #11) — 構造計画
+  # MUST: has_part, target_total_episodes, serial_or_complete
+  # SHOULD: planned counts
+  # ===========================================================================
+  unit_tree:
+    has_part: false                            # MUST: true | false
+    planned_part_count: 0                      # MUST(if has_part)
+    planned_arc_count_per_part: 0              # SHOULD
+    planned_packet_count_per_arc: 0            # SHOULD
+    planned_episode_count_per_packet: 0        # SHOULD
+    target_total_episodes: 0                   # MUST
+    serial_or_complete: ""                     # MUST: serial | complete
+    status: missing
+
+# ===========================================================================
+# 検証ヒント
+# - kernel.yaml は bible/logline.md / bible/promise.md / bible/style-voice.md
+#   と sync する。値が乖離すると DoR-A 通過不可
+# - status を必ず付ける（"" や null は禁止、最低 missing を入れる）
+# - source 欄に出典 trace を残す（後から追える）
+# - 編集後は kernel-fill-review.md prompt で機械検査する
+# - kernel が DoR-A 通過したら bible facet 17 + design + state の整備に進む
+# ===========================================================================

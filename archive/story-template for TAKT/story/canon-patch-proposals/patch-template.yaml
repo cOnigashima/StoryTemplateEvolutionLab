@@ -1,0 +1,40 @@
+# Copy this file when a review or draft reveals a canon change that should be
+# handled as a proposal instead of silently overwriting bible files.
+
+id: canon-patch-001-<slug>
+title: 修正案の短い名前
+status: proposed
+summary: 何をどう変える提案かを 1 行で書く
+
+source_artifacts:
+  - reviews/prose-review-YYYYMMDD-HHMMSS.md
+
+return_target: bible/world.md
+
+proposed_change:
+  - 未決定
+
+reason:
+  - 未決定
+
+affected_files:
+  - bible/world.md
+
+compatibility:
+  level: 要確認
+  impacts_published: false
+  breakage_risk:
+    - 未決定
+
+decision:
+  state: pending
+  decided_by: 未決定
+  note: 未決定
+
+application:
+  reflected: false
+  applied_files: []
+  followup_review: 未決定
+
+unresolved:
+  - 未決定

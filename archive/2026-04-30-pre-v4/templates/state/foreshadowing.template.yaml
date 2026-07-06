@@ -1,0 +1,16 @@
+# Foreshadowing（伏線実装状況）
+#
+# bible/plot/foreshadowing_map.md = 設計意図（どこで仕込み / どこで回収予定）
+# 本ファイル = 動的 status（仕込済み / 匂い / 強調 / 回収済み）
+
+foreshadowing:
+  # 形式:
+  # - id: fs-XXX
+  #   name: ""
+  #   type: ""         # モチーフ / 物的証拠 / キャラクター / 関係性 等
+  #   intended_first_setup: "ep###"
+  #   intended_recall: "ep###"
+  #   current_status: not_yet | planted | hinted | strengthened | recalled | dropped
+  #   notes: ""
+  #   source: bible/plot/{...}.md or scene_card 由来
+  []

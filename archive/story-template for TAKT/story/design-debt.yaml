@@ -1,0 +1,18 @@
+items:
+  - id: dd-template-001
+    layer: story/promises
+    status: open
+    topic: 作品約束と最初の packet 設計を同期する
+    severity: medium
+    impact: promises と packet の接続が弱いと、scene / draft で戦略質問が返ってくる
+    workaround: 最初の frozen packet を作る前に promises と arc-01 を更新する
+    resolve_when: packet-001 が promises の must-have と矛盾せず frozen 化できている
+
+  - id: dd-template-002
+    layer: story/review-loop
+    status: open
+    topic: typed review を上流 artifact に返す運用を維持する
+    severity: medium
+    impact: review が感想で止まると canon へ逆流できない
+    workaround: reviews で return target と priority を必ず書き、長生きする問題だけ design debt に送る
+    resolve_when: prose / design / character / world review の戻し先が運用として定着している

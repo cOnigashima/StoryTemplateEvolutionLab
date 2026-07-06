@@ -1,0 +1,144 @@
+# Copy a scoped packet here only after freeze conditions are met.
+# In frozen, blocker questions are empty and freeze_check is all true.
+
+id: packet-001-<slug>
+title: frozen packet を定義する
+status: frozen
+packet_size: "3"
+primaryArcId: arc-01
+relatedArcIds:
+  - arc-01
+goal: この束で達成したいことを確定形で書く
+summary: Scene へ下ろしても戦略質問が返ってこない frozen packet
+purpose: この束で読者に何を感じさせ、どの状態変化を運ぶかを確定形で書く
+reader_promise:
+  - この packet で継続的に渡す快楽を書く
+entry_state:
+  protagonist: 未決定
+  world: 未決定
+  relationships: 未決定
+exit_state:
+  protagonist: 未決定
+  world: 未決定
+  relationships: 未決定
+stakes:
+  personal: 未決定
+  relational: 未決定
+  external: 未決定
+pressure:
+  antagonist_or_obstacle: 未決定
+  time_or_structural_limit: 未決定
+episode_roles:
+  - "第1話（仮）: 導入 — 誘発と誤認を立てる"
+  - "第2話（仮）: 展開 — 対立圧を強める"
+  - "第3話（仮）: 着地 — 次束へ渡す反転とフックを作る"
+end_hooks:
+  - 次 packet で増幅する問いを 1 つ残す
+disclose:
+  - この packet で必ず明かす情報を書く
+withhold:
+  - この packet ではまだ伏せる情報を書く
+guardrails:
+  - 先の Arc の答えを前倒ししない
+  - 主人公の変化線を飛ばさない
+focus:
+  - 主人公の欲望
+  - 敵対圧
+  - 読者約束
+dependencies:
+  world:
+    - 未決定
+  characters:
+    - 未決定
+  rules:
+    - 未決定
+episodes:
+  - id: ep01
+    title: 未決定
+    status: planned
+    role: 導入
+    purpose: 未決定
+    desire: 未決定
+    obstacle: 未決定
+    loss: まだ安全圏にいるという前提
+    gain: 次へ進む理由
+    emotion_curve:
+      start: 未決定
+      peak: 未決定
+      end: 未決定
+    reveal:
+      disclose:
+        - 未決定
+      withhold:
+        - 未決定
+    hooks:
+      - 読者が続きを読みたくなる問い
+    cliffhanger: ep02 へ送る圧
+    draft_file: drafts/draft_ep01_YYYYMMDD_HHMMSS.md
+    scenes_merged:
+      - scenes/drafted/scene-ep01-01-<slug>.md
+      - scenes/drafted/scene-ep01-02-<slug>.md
+  - id: ep02
+    title: 未決定
+    status: planned
+    role: 展開
+    purpose: 未決定
+    desire: 未決定
+    obstacle: 未決定
+    loss: 主人公が守っていた前提の一部
+    gain: 反転に必要な認識
+    emotion_curve:
+      start: 未決定
+      peak: 未決定
+      end: 未決定
+    reveal:
+      disclose:
+        - 未決定
+      withhold:
+        - 未決定
+    hooks:
+      - 中盤反転へ向かう予兆
+    cliffhanger: ep03 へ送る痛み
+    draft_file: drafts/draft_ep02_YYYYMMDD_HHMMSS.md
+    scenes_merged:
+      - scenes/drafted/scene-ep02-01-<slug>.md
+      - scenes/drafted/scene-ep02-02-<slug>.md
+  - id: ep03
+    title: 未決定
+    status: planned
+    role: 着地
+    purpose: 未決定
+    desire: 未決定
+    obstacle: 未決定
+    loss: もう元に戻れない状態
+    gain: 次 packet を始めるための新しい立場
+    emotion_curve:
+      start: 未決定
+      peak: 未決定
+      end: 未決定
+    reveal:
+      disclose:
+        - 未決定
+      withhold:
+        - 未決定
+    hooks:
+      - 次 packet の入口になる開示
+    cliffhanger: 次 packet に渡すフック
+    draft_file: drafts/draft_ep03_YYYYMMDD_HHMMSS.md
+    scenes_merged:
+      - scenes/drafted/scene-ep03-01-<slug>.md
+      - scenes/drafted/scene-ep03-02-<slug>.md
+open_questions:
+  blocker: []
+  non_blocker:
+    - 未決定
+freeze_check:
+  purpose_clear: true
+  entry_exit_state_clear: true
+  episode_roles_clear: true
+  embedded_episode_cards_clear: true
+  loss_gain_clear: true
+  disclose_withhold_clear: true
+  dependencies_resolved: true
+  sceneable_without_strategy_questions: true
+queue_bucket: ideas

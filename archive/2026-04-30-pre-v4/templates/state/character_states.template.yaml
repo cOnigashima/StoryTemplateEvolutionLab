@@ -1,0 +1,18 @@
+# Character States（キャラ知識状態台帳）
+#
+# 各キャラが「現時点で何を知っているか / 知らないか」「関係温度」「emotion」を ep 単位で更新。
+# bible/characters/* = 静的設定
+# 本ファイル = 動的状態
+#
+# 形式:
+character_states:
+  ch_{slug}:
+    name: ""
+    at_episode: "ep###"
+    location: ""
+    emotion: ""
+    knows: []
+    does_not_know: []
+    relationships:
+      ch_other_slug: "関係の現状描写"
+    notes: ""

@@ -1,0 +1,7 @@
+{
+  "_template_note": "v4 generic template. Replace placeholders in <> with work-specific values.",
+  "project_name": "<work-slug>",
+  "project_description": "<1-2 文の作品概要>",
+  "default_agent": "plotter",
+  "v4_schema": true
+}

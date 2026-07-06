@@ -1,0 +1,30 @@
+# story/intake/provenance.yaml
+# raw → digest → seed → canon の親子関係を保持する。
+# canon 要素 1 つずつに対して「どの raw/digest/seed から来たか」を逆引きできるようにする。
+
+version: 1
+records: []
+
+# record のフォーマット例:
+#   - id: raw-YYYYMMDD-{source}-{slug}
+#     origin_type: raw
+#     path: story/intake/raw/YYYY-MM-DD-{slug}/
+#     descendants:
+#       - digest: digests/YYYY-MM-DD-{slug}.md
+#       - seed: seeds/seed-042-magic-system-rebuild.md
+#       - canon:
+#           - file: bible/world.md
+#             section: "§魔法系"
+#             commit: "abc1234"
+#             date: YYYY-MM-DD
+#       - canon:
+#           - file: arcs/arc-02.md
+#             section: "§reveal plan"
+#             commit: "def5678"
+#             date: YYYY-MM-DD
+#
+# record type 別:
+# - origin_type: raw      → 根。descendants が全体の系譜
+# - origin_type: digest   → 中間。親 raw への back-pointer と子 seed を持つ
+# - origin_type: seed     → ほぼ終端。親 digest と子 canon
+# - origin_type: canon    → 公式定着。親 seed (or 直接 raw)

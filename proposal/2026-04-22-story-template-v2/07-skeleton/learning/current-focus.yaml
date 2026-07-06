@@ -1,0 +1,50 @@
+# learning/current-focus.yaml
+# 現在の作業状態を機械可読で持つ。daily 更新推奨。
+# 参考: works/one-man-statefall/learning/current-focus.yaml
+
+version: 1
+
+updated_at: YYYY-MM-DD
+
+# 今作業している単位
+working_arc: arc-01        # or null
+working_packet: null       # packet-NNN-slug or null
+working_ep: null           # epNN or null
+working_phase: exploring   # exploring | scoped | frozen | drafting | self-review | typed-review | approval | done
+
+# 現在の障害
+blockers: []
+# blocker のフォーマット:
+#   - id: blocker-{slug}
+#     severity: high | medium | low
+#     description: |
+#       ...
+#     linked_open_question: story/open-questions.md §Q-NNN
+#     linked_raw: raw-YYYYMMDD-{slug}
+#     linked_seed: seed-NNN-{slug}
+
+# 今集中している種
+focus_seeds: []
+
+# intake 未反映数（reflection-ledger から集計）
+unresolved_intake_count: 0
+
+# 最新の review / 次の仕事
+last_review: null
+# example:
+#   file: reviews/typed-review-packet-003-ep17.md
+#   date: YYYY-MM-DD
+#   result: approve | hold | reject
+
+next_job: null
+# example:
+#   task: "ep18 draft"
+#   skill: "/draft"
+#   preflight_gates: [Gate0, GateA, GateC]
+
+# 機械可読なメトリクス（optional）
+metrics:
+  drafts_this_week: 0
+  reviews_this_week: 0
+  seeds_promoted_this_week: 0
+  unresolved_debt_count: 0

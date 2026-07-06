@@ -1,0 +1,130 @@
+# StoryTemplateEvolution
+
+> AI 支援の長編小説制作のための、次世代 Story Template。
+> renji 作品を pilot として、実走から抽象化された template / adapter / checklist 集。
+> 開始日: 2026-04-29
+
+---
+
+## このリポジトリの位置付け
+
+`write_read_novel_manufacture/story-template for TAKT/` 配下の旧 Story Template (v1) と、その上で議論された 3 つの提案（v2-fat / handoff / v3-kernel）を踏まえ、**renji を pilot として実走しながら抽象化** する形で生まれた v2 系 template。
+
+設計ではなく、**実例 (renji) から蒸留された** ところがポイント。
+
+---
+
+## 構成
+
+```
+StoryTemplateEvolution/
+├── README.md                  本ファイル
+│
+├── proposals/                 「次世代 Story Template への提案」群
+│   └── 2026-04-29-pilot-driven-evolution/
+│       本セッションで作った提案 + 知見
+│
+├── templates/                 新規作品で空からコピーする雛形
+│   ├── bible/
+│   ├── design/
+│   ├── state/
+│   └── writing/episode_pack/
+│
+├── adapter/                   Intake / Writing Adapter 設計（汎用版）
+│
+├── checklists/                作劇ルール / レビュー / 凍結チェック等
+│
+├── rules/                     .claude/rules/ への追加・更新候補
+│
+├── docs/                      用語 / 単位 / kernel 仕様 / status / DoR DoD
+│
+├── learning/                  本セッションの retro と引き継ぎ
+│
+└── work_init/                 新規作品を起こす step-by-step
+```
+
+---
+
+## 設計原則（v1 / v2-fat / v3 から継承して固定）
+
+1. **kernel は薄く保つ**: bible/premise / promise 等の最小核は 11 項目以内
+2. **bible / design / state を分離**: 安定設定 / 揺れる設計 / 動的状態
+3. **Intake Adapter は raw を直接 bible に流さない**: synthesis を経由
+4. **Writing Adapter は bible 全体を writer に渡さない**: 1 単位に必要な分のみ圧縮
+5. **status を 11 値で区別**: filled / missing / tentative / deferred / intentionally_blank / intentionally_hidden / not_applicable / project_override / contradiction / needs_author_decision / rejected
+6. **fat-by-design は Layer 2/3 のみ**: kernel は薄く、レビュー道具・craft は厚く
+7. **template は実走から生む**: 設計室で先に作らず、pilot 実走から抽象化
+
+---
+
+## v1 / 旧提案との関係
+
+| 起源 | 場所 | 扱い |
+|---|---|---|
+| 旧 Story Template (v1) | `../story-template for TAKT/` | 温存。本リポジトリへ移行は段階的 |
+| Pack v2-fat (2026-04-22) | `../story-template for TAKT/proposals/2026-04-22-story-template-v2/` | 参照資産。Layer 構造と Review Matrix の発想は継承 |
+| Pack handoff (別セッション) | `../story-template for TAKT/proposals/storytemplate_workflow_handoff_pack/` | 参照資産。Adapter / Judge / Ledger / Framework Index 概念と「最強テンプレ作るな」原則を継承 |
+| Pack v3-kernel (2026-04-29 午前) | `../story-template for TAKT/proposals/2026-04-29-domain-kernel-v3/` | 語彙 / kernel / status / DoR DoD は本リポジトリ docs/ に直接持ち上げ |
+| renji pilot (2026-04-29 午後) | `../story-template for TAKT/works/renji/` | 本リポジトリの**最初の実例**。template はここから抽象化 |
+
+---
+
+## renji との関係
+
+renji は本テンプレートの **最初の利用者**。
+
+- renji 本体は `../story-template for TAKT/works/renji/` のまま（後で `Works/renji/` に移動予定）
+- renji の `.adapter/` 7 ファイルが本リポジトリの `adapter/` の元資料
+- renji の bible/design/state 実体ファイルが本リポジトリの `templates/` の元資料
+- renji 固有装置（三層対応 / 正当化圏 / レンジ語）は **template 化しない**（renji 内に残置）
+- 構造として汎用化できる部分（kernel 11 項目 / character sheet / scene card / acceptance checklist 等）は template に昇格
+
+---
+
+## 使い方（簡略）
+
+### 新規作品を起こすとき
+
+```
+1. work_init/README.md を読む
+2. work_init/new_work_bootstrap.md の手順を踏む
+3. templates/ から必要な雛形を新規 work/ にコピー
+4. adapter/intake_adapter_prompt.md で初期 ingestion
+5. checklists/ で DoR を確認
+6. 1 episode 試走 → retro → templates 改善
+```
+
+### 既存作品（renji 等）をこのテンプレートに沿わせるとき
+
+```
+1. 既存資料を inbox/ 相当の場所に保管
+2. adapter/intake_adapter_prompt.md を実行 → update_proposal 生成
+3. human approval → bible/design/state へ反映
+4. writing_adapter で 1 episode 分の writing_pack 生成
+5. 執筆 → review → ledger 更新
+```
+
+---
+
+## 進化方針
+
+- **Pull 型**: 新作品で必要になったときに template を引き出す
+- **Retro 駆動**: 各作品 / 各 arc で retro を回し、効いた template を残す
+- **凍結禁止**: 「最強テンプレ完成」を目指さない。常に v0 ベース
+- **作品固有はコピーしない**: renji の三層対応のような装置は、別作品が「これ採用する」と決めたら個別コピー、template には積まない
+
+---
+
+## 隣接ドキュメント
+
+- `proposals/2026-04-29-pilot-driven-evolution/00_README.md` — 本セッションで何をやったかの説明
+- `learning/2026-04-29-renji-pilot-retro.md` — 学び
+- `learning/2026-04-29-handoff-to-next-session.md` — 次セッションへの引き継ぎ
+- `docs/vocabulary.md` — 用語一覧（v3 から継承）
+- `work_init/new_work_bootstrap.md` — 新規作品起こし手順
+
+---
+
+## ライセンス・著作権
+
+renji の作品設定・本文・固有名詞などは作者 (taiji) の著作物。本テンプレートは構造の抽象化のみを抽出し、renji 固有内容は templates/ には含めない。
