@@ -1,0 +1,76 @@
+# draft に対する多層レビュー。typed review + persona 2ラウンド → 採否判定。
+# review-gate.md の基準を使う。人間は結果を deliverables/reviews/ で見る。
+name: review-multipass
+initial_step: typed_review
+max_steps: 10
+
+steps:
+  - name: typed_review
+    persona: critic
+    policy: [review_gate]
+    edit: false
+    output_contract: review_ticket
+    instruction: |
+      25項目ルーブリック + 破綻ゲート G1/G2/G3 で採点。80/60 閾値で判定。
+      evaluation-lab の追加criterion(knowledge-state-fairness等)は shadow で併記(非gating)。
+    rules:
+      - condition: 破綻ゲートが落ちた
+        next: report          # 破綻は即修正必須として報告
+      - condition: 採点完了
+        next: persona_round1
+
+  - name: persona_round1
+    parallel:                 # 3ペルソナ同時
+      - persona: reader_immersion    # A 没入型
+      - persona: reader_structure    # B 構造型
+      - persona: reader_dropout      # C 離脱型
+    policy: [review_gate]
+    edit: false
+    output_contract: review_ticket
+    instruction: |
+      1ラウンド目。表層で目につく欠陥を各観点から。side-by-sideで揃える。
+    rules:
+      - condition: 3ペルソナ揃った
+        next: adjudicate1
+
+  - name: adjudicate1
+    persona: editor
+    edit: false
+    instruction: |
+      採否判定マトリクス(採用/条件付/却下/learning送り)。重複指摘を最優先。
+      直交する指摘は2サイクルに分ける。反映先(reverse-flow)を記す。
+    rules:
+      - condition: 修正が必要
+        next: report          # 修正は draft-episode の revise で行う
+      - condition: 2ラウンド目に進める状態
+        next: persona_round2
+
+  - name: persona_round2
+    parallel:
+      - persona: reader_immersion
+      - persona: reader_structure
+      - persona: reader_dropout
+    edit: false
+    output_contract: review_ticket
+    instruction: |
+      2ラウンド目。1ラウンド修正で露出した次層(分布の偏り・前振り不在)を検出。
+      3ラウンド目は原則やらない(ROI逓減)。
+    rules:
+      - condition: 完了
+        next: report
+
+  - name: report
+    persona: editor
+    edit: true
+    output_contract: review_ticket
+    instruction: |
+      全レビューを統合し deliverables/reviews/ に採否判定付きで出力。
+      昇格候補(同じ指摘が複数回)は logs/learning に印を付ける。
+    rules:
+      - condition: 出力完了
+        next: COMPLETE
+
+loop_monitors:
+  - watch: [persona_round1, adjudicate1, persona_round2]
+    threshold: 2
+    supervisor: supervisor

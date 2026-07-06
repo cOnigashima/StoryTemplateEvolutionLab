@@ -11,7 +11,8 @@
 | ディレクトリ | 由来 | アクセス頻度 |
 |---|---|---|
 | **`2026-04-30-pre-v4/`** | v4 採用直前のスナップショット（v3 状態の docs / adapter / templates / prompts / etc） | 中（rollback 時 / 履歴参照） |
-| **`proposal/`** | rejected / archived された提案群（handoff-pack-takt） | 低（履歴のみ） |
+| **`2026-04-31-integreated/`** | 2026-07-06 workbench 統合直前の旧 current 全体（v4 採用済み状態） | 中（rollback 時 / 継承検証） |
+| **`proposal/`** | rejected / archived された提案の置き場（現在は空。handoff-pack-takt は `../proposal/2026-04-31-storytemplate_workflow_handoff_pack_takt/` に復帰） | 低（履歴のみ） |
 | **`story-template/`** | v1 オリジナル skeleton（マニュアル移動 2026-04-30） | 低（履歴のみ） |
 | **`story-template for TAKT/`** | v1 + proposals 拡張版（マニュアル移動 2026-04-30） | 低（履歴のみ） |
 
@@ -45,16 +46,30 @@
 
 ---
 
-### `proposal/`
+### `2026-04-31-integreated/`
 
-**経緯**: rejected または archived された提案を格納。
+**作成日**: 2026-07-06
+**経緯**: `proposal/2026-07-06-workbench-ontology-loop/` の採用（workbench 統合）に伴い、v4 採用済み状態の旧 current 全体を退避。新 current が置換。
 
 **含まれるもの**:
-- `storytemplate_workflow_handoff_pack_takt/`
-  - 元位置: `proposal/storytemplate_workflow_handoff_pack_takt/`（v4 採用時に archive へ）
-  - 内容: TAKT 実行エンジンとの接合 Pack、Adapter / Judge / Ledger 概念、Framework Index 戦略
-  - status: archived（TAKT は opt-in 方針、本提案 v4 で採用見送り）
-  - 参照価値: Adapter 2 分割の発想、Framework Lens カタログ概念は v4 が部分継承
+- 旧 `current/` 一式 — docs（supersede stub 含む）/ adapter / agents 18 / skills 7 / rules / checklists / prompts 7 / craft / templates / learning / work_init / README / WORKFLOW
+
+**新 current との対応**: `current/INHERITANCE.md` と `proposal/2026-07-06-workbench-ontology-loop/COVERAGE.md` に継承マップあり。
+
+**アクセス用途**:
+- workbench 統合で問題発覚時の rollback ソース
+- 継承の完全性検証（COVERAGE との突合）
+- **編集禁止**
+
+※ フォルダ名の 4/31 は実在しない日付（v4 と統合の間を示す論理日付として user が命名維持を判断）。integrated のスペルは integreated のまま維持。
+
+---
+
+### `proposal/`
+
+**経緯**: rejected または archived された提案を格納。**現在は空**。
+
+- `storytemplate_workflow_handoff_pack_takt/` は 2026-07-06 の TAKT 暫定採用に伴い、日付 prefix 付きで `../proposal/2026-04-31-storytemplate_workflow_handoff_pack_takt/`（status: historic）に復帰。
 
 ---
 

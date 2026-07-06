@@ -1,0 +1,12 @@
+# これを config.yaml にコピーして使う。
+provider: claude        # claude / claude-sdk / codex / opencode / cursor / copilot ...
+model: sonnet           # 既定モデル。step ごとに上書き可
+language: ja
+
+# 実行ログ・レポートの出力先（workbench の logs に集約）
+runs_dir: ../logs/runs
+
+# step 別モデル上書きの例（クロスレビュー：実装と別系統でレビュー）
+model_overrides:
+  draft: sonnet
+  review: opus          # レビューは上位/別系統で

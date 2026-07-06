@@ -1,0 +1,48 @@
+# origin: workbench
+# オントロジーの薄いスキーマ。creativeを縛らない最小限。
+# 詳細な設計判断は ../../../01_オントロジー適用の見立て.md 参照。
+#
+# 方針:
+#  - Class は最小限。理論固有概念は専用Classを増やさず `type:` で分ける（クラス爆発回避）。
+#  - property = 値への関係 / relation = 個体への関係。relation語彙は relations.yaml に統制。
+#  - 制約は「必須性」と「参照整合性」の2種だけ。強い排他(disjoint/cardinality)は張らない。
+
+classes:
+  Character:
+    id_prefix: "ch_"
+    required: [id, name]
+    optional: [type, faction, aliases, status, notes]
+  Location:
+    id_prefix: "loc_"
+    required: [id, name]
+    optional: [type, parent_location, notes]
+  Item:
+    id_prefix: "it_"
+    required: [id, name]
+    optional: [type, owner, notes]
+  Faction:
+    id_prefix: "fac_"
+    required: [id, name]
+    optional: [type, notes]
+  Event:
+    id_prefix: "ev_"
+    required: [id, summary]
+    optional: [type, at_time, participants, causes, notes]  # causes = Event id list
+  Fact:
+    id_prefix: "ft_"
+    required: [id, statement]
+    optional: [type, notes]   # type: FACT / OPINION / PREDICTION（誰の信念かはKNOWS辺で表現）
+  Scene:
+    id_prefix: "sc_"
+    required: [id, unit_ref]
+    optional: [location, characters_present, notes]
+
+# validator が見る制約（tools/ontology_check.py）
+constraints:
+  reference_integrity: true   # relation の宛先IDが実在するか
+  required_fields: true       # required を満たすか
+  epistemic_monotonic: true   # 知識状態が単調か（既知を再び「初めて知る」を禁止）
+  epistemic_no_future_ref: true # まだ知らないはずの事実に言及していないか
+  foreshadow_payoff: true     # setup に対応する payoff があるか（未回収検出）
+  timeline_acyclic: true      # Event の causes/precedes が巡回していないか
+gating: false                 # 当面 warning のみ。止めるのは human ゲートだけ。

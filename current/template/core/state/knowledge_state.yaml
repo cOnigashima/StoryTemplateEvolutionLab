@@ -1,0 +1,25 @@
+# origin: workbench (fools の knows/does_not_know を bi-temporal 化)
+# 「誰がいつ何を知っているか」= epistemic state。KNOWS辺の集合。
+# validator が epistemic矛盾（まだ知らない事実への言及）と単調性を検査する。
+
+# Fact マスター（知識の対象）
+facts:
+  - id: ft_example
+    statement: "（例）主人公の能力の正体"
+    type: FACT            # FACT / OPINION / PREDICTION
+    foreshadow_status: planted   # not_yet/planted/hinted/strengthened/recalled（伏線でもある場合）
+
+# KNOWS 辺（時間付き）
+knows:
+  - who: ch_example
+    fact: ft_example
+    valid_at: "ep005"     # この時点から知っている
+    invalid_at: null      # 忘却/誤認訂正で無効化する場合に埋める（消さない）
+    source: "ev_example"  # どの出来事で知ったか（provenance）
+    note: ""
+
+# 明示的に「知らない」も残す（矛盾検出に有効）
+does_not_know:
+  - who: ch_example
+    fact: ft_example
+    until: "ep005"        # この時点までは知らないはず

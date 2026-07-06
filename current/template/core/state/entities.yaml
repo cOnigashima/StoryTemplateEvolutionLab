@@ -1,0 +1,30 @@
+# origin: workbench (fools/villainess の character_states.yaml を一般化)
+# 作品の登場物（Character/Location/Item/Faction）。安定IDを振る。
+# relations は schema/relations.yaml の語彙のみ。自由文は notes へ。
+# ※ここは「静的〜半静的な設定」。知識状態の時間変化は knowledge_state.yaml へ。
+
+characters:
+  - id: ch_example
+    name: "（例）主人公"
+    type: "protagonist"
+    faction: fac_example
+    status: alive          # alive / dead / missing / unknown
+    relationships:         # relation語彙のみ
+      - rel: ALLY_OF
+        to: ch_other
+        since: "ep001"
+        sentiment: "信頼"
+    notes: "この雛形を消して実キャラを追加する。"
+
+locations:
+  - id: loc_example
+    name: "（例）王都"
+    type: "city"
+    parent_location: null
+
+items: []
+
+factions:
+  - id: fac_example
+    name: "（例）記録院"
+    type: "institution"

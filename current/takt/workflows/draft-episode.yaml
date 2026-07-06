@@ -1,0 +1,86 @@
+# 1話を書くループ。Writing Pack → draft → 機械検査 → self-review → 修正 → 成果物。
+# 人間は最後に deliverables/ で確認する（G-Deliverable）。
+name: draft-episode
+initial_step: preflight
+max_steps: 12                 # 全体の暴走防止ハードキャップ
+
+steps:
+  - name: preflight
+    persona: drafter          # facets/personas/drafter.md
+    policy: [style_voice, drafter_preflight]
+    edit: false
+    instruction: |
+      対象 ep の Writing Pack(4点)を読み、drafter-preflight の3項目
+      (因果一段落 / 知識状態台帳の単調性 / 合理化語彙tell) を meta にまとめる。
+      Gate 0/A/C を通せなければ ABORT して上流へ差し戻す。
+    rules:
+      - condition: preflight を通過した
+        next: draft
+      - condition: Writing Pack か上流に不備がある
+        next: ABORT
+
+  - name: draft
+    persona: drafter
+    policy: [style_voice]
+    knowledge: [writing_pack, ontology_slice]   # k-hop抽出済みcontext
+    edit: true
+    output_contract: draft_format
+    instruction: |
+      Writing Pack に従って本文を書く。プロット変更・設定追加はしない。禁則を守る。
+      state に無い情報を既知のように書かない。
+    rules:
+      - condition: draft を書き終えた
+        next: ontology_check
+
+  - name: ontology_check
+    persona: continuity_checker
+    edit: false
+    instruction: |
+      tools/ontology_check.py を回し、epistemic矛盾・未回収伏線・タイムライン循環・
+      参照整合性を確認。warning は self_review に渡す。致命的矛盾があれば revise へ。
+    rules:
+      - condition: 致命的な矛盾がある
+        next: revise
+      - condition: 問題なし or warning のみ
+        next: self_review
+
+  - name: self_review
+    persona: critic
+    policy: [review_gate]
+    edit: false
+    output_contract: review_ticket
+    instruction: |
+      multi-pass self-review。Pass1 因果認知 / Pass2 Writing Pack適合 / Pass3 読者シミュ。
+      破綻ゲート G1/G2/G3 を必ず判定。採否と反映先を出す。
+    rules:
+      - condition: 修正すべき指摘がある
+        next: revise
+      - condition: 破綻ゼロで must_satisfy 充足
+        next: finalize
+
+  - name: revise
+    persona: drafter
+    policy: [style_voice]
+    edit: true
+    instruction: |
+      {previous_response} の採用指摘だけ本文に反映する。packet以上の遡上は learning送りにして本文では触らない。
+    rules:
+      - condition: 反映した
+        next: ontology_check       # 直したら再検査（review⇄revise ループ）
+
+  - name: finalize
+    persona: editor
+    edit: true
+    output_contract: draft_format
+    instruction: |
+      本文を deliverables/drafts/ に、レビュー票を deliverables/reviews/ に出力。
+      logs/runs にレポートを残す。ここで停止し人間確認(G-Deliverable)を待つ。
+    rules:
+      - condition: 出力完了
+        next: COMPLETE
+
+# 堂々巡り検出（loop_monitors.md 参照）
+loop_monitors:
+  - watch: [ontology_check, self_review, revise]
+    threshold: 3               # 3周しても収束しなければ
+    supervisor: supervisor     # 進捗評価 → 継続 or ABORT

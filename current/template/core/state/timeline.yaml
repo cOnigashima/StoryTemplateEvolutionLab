@@ -1,0 +1,12 @@
+# origin: workbench
+# 出来事の時系列と因果。validator が巡回(循環)を検出する。
+# Event は物語内時刻を持ち、CAUSES/PRECEDES で結ぶ。
+
+events:
+  - id: ev_example
+    summary: "（例）主人公が異世界に到着する"
+    at_time: "day1"          # 物語内時刻（相対でよい）
+    participants: [ch_example]
+    precedes: [ev_next]      # 物語内で先行する Event
+    causes: []               # 因果で引き起こす Event
+    episode_ref: "ep002"

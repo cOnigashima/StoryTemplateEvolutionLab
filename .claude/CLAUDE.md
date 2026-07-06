@@ -20,47 +20,49 @@ StoryTemplateEvolution/
 - **current/ の編集は Patch 経由が望ましい**（直接書き換えではなく、proposal/ で議論してから反映）。
 - **新しい提案は proposal/{date}-{slug}/ に作る**。
 
-### 2. v4 を正本とする
+### 2. 正本の層構造（2026-07-06 統合後）
 
-**現在の正本提案**: `proposal/2026-04-30-zero-base-v4/`
+- **構造・運用の正本**: `current/`（2026-07-06 に workbench 版で全面置換。旧 current は `archive/2026-04-31-integreated/` に凍結）
+  - 置換の根拠: `proposal/2026-07-06-workbench-ontology-loop/PROPOSAL.md`
+- **ドメイン語彙の正本**: `proposal/2026-04-30-zero-base-v4/`（採用済み・現役）
 
 不明点があれば最初に読むべきもの:
-- `proposal/2026-04-30-zero-base-v4/00_README.md` — 提案の入口
-- `proposal/2026-04-30-zero-base-v4/02_domain_model.md` — 56 語の Card（用語の正本）
-- `proposal/2026-04-30-zero-base-v4/03_storage_trinity.md` — 物理配置
-- `proposal/2026-04-30-zero-base-v4/04_pipeline_overview.md` — 動作正本
 - `current/WORKFLOW.md` — 1 枚ガイド
+- `current/CLAUDE.md` — 運用契約（人間ゲート・core/overlay・オントロジー）
+- `current/INHERITANCE.md` — 継承マップ（何が踏襲で何が新規か）
+- `proposal/2026-04-30-zero-base-v4/02_domain_model.md` — 56 語の Card（用語の正本）
+- `current/template/folder_structure.md` — 物理配置（core+overlay）
 
 ### 3. supersede stub に注意
 
-`current/docs/vocabulary.md`、`current/docs/dor_dod.md`、`current/adapter/folder_structure.md` は **supersede stub**。これらは編集せず、内容は proposal/.../ を参照。
+`current/docs/vocabulary.md`、`current/docs/dor_dod.md` は **supersede stub**。これらは編集せず、内容は `proposal/2026-04-30-zero-base-v4/` を参照。
 
 ### 4. 各 work と StoryTemplate の境界を守る
 
-- 作品固有内容（三層対応 / 章末資料 / 批評性 等）を `current/templates/` に積まない
-- 共通 rule / agent / skill は `current/{rules,agents,skills,templates/.claude/}/` に集約
-- 作品横断の learning は `current/learning/`
+- 作品固有内容（三層対応 / 章末資料 / 批評性 等）を `current/template/` に積まない。core / overlay / work-local の三分は `current/CLAUDE.md` §3 に従う
+- 共通 rule / agent / skill は `current/{agents,skills,template/core/rules}/` に集約
+- 作品側の逸脱は work.manifest の `deviations_from_core` に理由付きで明示
 
-### 5. 採用後の TODO（90 日以内）
+### 5. 統合後の TODO（COVERAGE §3 / INHERITANCE 未完節）
 
-- writing_adapter_prompt.md の v4 化（Q-B-001）
-- update_proposal_format.yaml / field_mapping_template.yaml の v4 化
-- bible/ facet 雛形 13 ファイル新規作成
-- prompts/00-05 の参照更新
-- craft/ コンテンツ整備（Q-B-003）
-- agents / skills の dir 参照を v4 に書き換え
+- DoR/DoD 正本の一本化（stub は v4 06_bible_dor.md を指す。`template/core/checklists/dor_dod.md` との関係整理）
+- agents / skills ↔ TAKT facets 対応表の作成
+- design/ 実体テンプレ4本と `state/rejected_ideas.md` 雛形の追加
+- 17 facet 中未整備の System / Timeline / Sample Scene テンプレ追加
+- craft/ rubric 実体化
 
-詳細: `proposal/2026-04-30-zero-base-v4/09_open_questions.md` Section 2-3。
+詳細: `proposal/2026-07-06-workbench-ontology-loop/COVERAGE.md` Section 3。
 
 ---
 
 ## このリポジトリで Claude が **やってはいけない**
 
-- archive/ 配下のファイルを編集する
+- archive/ 配下のファイルを編集する（`archive/2026-04-31-integreated/` の旧 current 含む）
 - proposal/ の旧提案（v2 / v3 / pilot-driven 等）を編集する（履歴）
-- current/templates/ に作品固有 facet を積む
+- current/template/ に作品固有 facet を積む
 - kernel.template.yaml の `schema_version: "v4"` を変える（破壊的変更）
 - supersede stub を直接書き換える（proposal/.../ 側で議論する）
+- 人間ゲート（G-Intake / G-Deliverable / G-Publish）を AI 判断で通過させる
 
 ---
 

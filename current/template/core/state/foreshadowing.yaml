@@ -1,0 +1,12 @@
+# origin: fools (foreshadowing.yaml を一般化)
+# 伏線の setup→payoff。validator が「payoff無き setup（撃たれない銃）」を検出する。
+
+foreshadowing:
+  - id: fs_example
+    name: "（例）壁時計の一拍"
+    type: "モチーフ"
+    setup_at: "ep001"          # 仕込む話
+    payoff_at: "ep072"         # 回収予定
+    status: not_yet            # not_yet / planted / hinted / strengthened / recalled
+    fact_ref: ft_example       # 対応する Fact（任意）
+    notes: "説明せず1文で置く。中間話では使わない、等の運用メモ。"

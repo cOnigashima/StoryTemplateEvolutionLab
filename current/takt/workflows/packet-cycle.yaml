@@ -1,0 +1,64 @@
+# overlay=unit-packet-2stage 専用。packet を2段freezeで進めるループ。
+# freeze は不可逆度が高いので、その前後で人間ゲートを挟む。
+name: packet-cycle
+initial_step: scope
+max_steps: 16
+
+steps:
+  - name: scope
+    persona: plotter
+    edit: true
+    instruction: |
+      packet の purpose / episode_roles / disclose / withhold / guardrails を埋める。
+      entry_state/exit_state を直前packetと整合させる。
+    rules:
+      - condition: DoR-C を満たした
+        next: freeze1_gate
+
+  - name: freeze1_gate
+    persona: editor
+    edit: false
+    instruction: |
+      初回freeze前チェック。/verify-packet-citation 相当で前packet引用を機械確認。
+      ここで停止し人間確認（不可逆度：中）。
+    rules:
+      - condition: 承認された
+        next: dry_run_draft
+      - condition: 差し戻し
+        next: scope
+
+  - name: dry_run_draft
+    persona: drafter
+    edit: true
+    instruction: 冒頭1〜2話を draft-episode workflow で先行執筆。
+    rules:
+      - condition: dry-run 完了
+        next: dry_run_review
+
+  - name: dry_run_review
+    persona: critic
+    instruction: persona A/B/C 1ラウンド目。密度マップ・motif配置の当たりを取る。
+    edit: false
+    rules:
+      - condition: 完了
+        next: freeze2_gate
+
+  - name: freeze2_gate
+    persona: editor
+    edit: true
+    instruction: |
+      再freeze。密度マップ・motif・接続beatを確定。以降の変更はcanon-patchのみ。
+      ここで停止し人間確認（不可逆度：高）。
+    rules:
+      - condition: 承認された
+        next: main_draft
+      - condition: 差し戻し
+        next: dry_run_review
+
+  - name: main_draft
+    persona: drafter
+    edit: true
+    instruction: 残り episode を draft-episode → review-multipass(2ラウンド目含む) で仕上げる。
+    rules:
+      - condition: packet 全話完了
+        next: COMPLETE

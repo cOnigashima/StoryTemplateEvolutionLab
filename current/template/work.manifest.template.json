@@ -1,0 +1,23 @@
+{
+  "$comment": "作品ごとに works/{slug}/work.manifest.json としてコピーし、構造を宣言する。CLAUDE.md 第2節参照。",
+  "slug": "REPLACE-with-work-slug",
+  "title": "作品タイトル",
+  "uses_core_version": "0.1",
+  "overlays": [
+    "unit-packet-2stage"
+  ],
+  "work_local_extensions": [],
+  "deviations_from_core": [
+    {
+      "$comment": "coreの規定を上書きする場合のみ。理由必須。暗黙の逸脱は禁止。",
+      "rule": "review.persona_rounds",
+      "override": 2,
+      "reason": "例: 2ラウンド制でROIが最適だった実績（villainess由来）"
+    }
+  ],
+  "genre_overlay": null,
+  "kakuyomu": {
+    "ai_content_tag": true,
+    "publish_cadence": "作品ごとに設定"
+  }
+}

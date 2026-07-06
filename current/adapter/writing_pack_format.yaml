@@ -1,0 +1,176 @@
+# Writing Pack Format（汎用版）
+#
+# Writing Adapter の出力。1 episode を書くための 4 ファイル。
+# 配置: writing/episode_packs/{ep_id}/
+
+# ===== 1. episode_brief.md =====
+
+episode_brief:
+  ep_id: ""
+  episode_title: ""
+  arc_id: ""
+  arc_title: ""
+
+  source_references:                # この brief の根拠（trace）
+    - bible/plot/episode_plan.md (episode = ep###)
+    - bible/plot/scene_cards.md (scene_card = C###)
+
+  position_in_arc: opening | build | pivot | climax | closing
+  position_in_packet: opening | midpoint | closing
+
+  purpose:                          # この ep が物語的に果たす役割
+    - ""
+
+  entry_state:
+    where: ""
+    when: ""
+    pov_character: ""
+    pov_character_knows: []
+    pov_character_does_not_know: []
+    pov_character_emotion: ""
+    relevant_relationships: {}
+
+  exit_state:
+    where: ""
+    when: ""
+    pov_character_knows: []        # entry からの差分
+    pov_character_emotion: ""
+    relevant_relationships: {}
+    cliffhanger_or_hook: ""
+
+  what_happens_in_episode:          # 起こる出来事の骨子
+    - beat_1: ""
+
+  estimated_length: 1500-3000       # 字数目安
+
+  human_decisions_needed: []        # author 判断が要る論点
+
+# ===== 2. scene_card.md =====
+
+scene_card:
+  ep_id: ""
+  card_id: ""                       # 既存マスター参照
+  source_references: []
+
+  scenes:
+    - scene_id: ""                  # ep###-sc##
+      location: ""
+      characters_present:
+        - ch_id: ""
+          role_in_scene: ""
+          knows_in_this_scene: []
+      time_of_day: ""
+
+      scene_purpose: ""
+      goal: ""                      # focal char ローカル goal
+      conflict: ""
+      turn: ""
+      end_state: ""
+
+      beats:
+        - beat_id: ""
+          content: ""
+          knowledge_change: ""
+
+      dialogue_anchors: []
+      sensory_anchors: []
+      style_notes: ""
+
+# ===== 3. context_pack.md =====
+
+context_pack:
+  ep_id: ""
+
+  premise_oneliner: ""
+  reader_promise_short: []
+  theme_keywords: []
+
+  pov_for_this_episode: ""
+  narration_tone: ""
+  forbidden_words: []
+  voice_samples_to_match: []
+
+  characters_in_this_episode:
+    - ch_id: ""
+      from_bible: ""                # 参照
+      from_state: ""
+      summary_for_writer: ""
+      voice_quirks: []
+      do_not_include: []
+
+  world_context:
+    - source: ""
+      relevant_excerpt: ""
+
+  prior_episode_carryover:
+    prior_ep_id: ""
+    prior_ep_summary: ""
+    knowledge_carried: []
+    objects_carried: []
+    relationships_temp: {}
+    unresolved_questions: []
+
+  # 作品固有要素（renji の三層対応 等）
+  work_specific_elements: {}
+
+  in_world_documents_for_this_episode:
+    - doc_id: ""
+      type: ""
+      from_template: ""
+      content_hint: ""
+
+  ledger_snapshot:
+    timeline_relevant: []
+    foreshadowing_status_relevant: []
+    open_questions_relevant: []
+
+  editorial_constraints: []
+  project_principles_active: []
+
+# ===== 4. acceptance_checklist.md =====
+
+acceptance_checklist:
+  ep_id: ""
+
+  must_satisfy:
+    - id: ""
+      claim: ""
+      verifiable_by: prose | meta | reviewer | reader_simulation
+      source: ""
+
+  must_not_violate:
+    - id: ""
+      claim: ""
+      severity: low | medium | high | critical
+      source: ""
+
+  intended_unknowns:
+    - claim: ""
+      source: ""
+
+  must_be_clear:
+    - claim: ""
+      source: ""
+
+  acceptable_ambiguity: []
+
+  quality_gates:
+    - "因果一段落の通過"
+    - "知識状態台帳の単調性"
+    - "POV 切替が方針通り"
+    - "禁則語の不使用"
+    - "センシティブ描写ガイド遵守"
+
+  auto_fix_allowed: []
+  human_required_if: []
+  ignore_or_defer: []
+
+  references: []
+
+# ===== 設計原則 =====
+#
+# 1. bible / state を全部渡さない（この ep に必要な分のみ）
+# 2. trace 必須（全項目に source 参照）
+# 3. intended_unknowns と must_be_clear を分ける
+# 4. auto_fix_allowed と human_required_if を明示
+# 5. 各 ep ごとに新規生成

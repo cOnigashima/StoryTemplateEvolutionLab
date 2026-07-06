@@ -6,7 +6,7 @@
 
 1. **archive/ を編集しない**
 2. **三本柱（current / proposal / archive）の境界を維持する**
-3. **採用済み proposal（2026-04-30-zero-base-v4）を archive に下ろす前に必ず author 確認**
+3. **採用済み proposal（2026-04-30-zero-base-v4 / 2026-07-06-workbench-ontology-loop）を archive に下ろす前に必ず author 確認**
 4. **supersede stub を直接書き換えない**（proposal 側で議論して、ここに反映）
 5. **新規提案は `proposal/{YYYY-MM-DD}-{slug}/` の形式で**
 6. **作品固有 facet を generic templates に流入させない**

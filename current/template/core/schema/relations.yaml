@@ -1,0 +1,49 @@
+# origin: workbench
+# relation（辺）の統制語彙。ここに無い関係名は使わない（自由文は note に退避）。
+# 辺にはプロパティを付けてよい（プロパティグラフ流）。特に時間・出所。
+
+relations:
+  KNOWS:            # Character -> Fact  「誰がいつ何を知っているか」
+    from: Character
+    to: Fact
+    edge_props: [valid_at, invalid_at, source]   # bi-temporal + provenance
+    note: "invalid_at で無効化。古いレコードは消さず残す（non-lossy）。"
+  ALLY_OF:          # Character/Faction 間
+    from: [Character, Faction]
+    to: [Character, Faction]
+    edge_props: [since, sentiment]
+  ENEMY_OF:
+    from: [Character, Faction]
+    to: [Character, Faction]
+    edge_props: [since, reason]
+  MEMBER_OF:
+    from: Character
+    to: Faction
+    edge_props: [since, role]
+  LOCATED_IN:
+    from: [Character, Item, Scene]
+    to: Location
+    edge_props: [at_time]
+  PARTICIPATES_IN:
+    from: Character
+    to: Event
+    edge_props: [role]
+  CAUSES:           # Event -> Event  因果
+    from: Event
+    to: Event
+    edge_props: []
+  PRECEDES:         # Event -> Event  物語内時系列
+    from: Event
+    to: Event
+    edge_props: []
+  OWNS:
+    from: Character
+    to: Item
+    edge_props: [since]
+  CLUE_OF:          # Item/Fact/Scene -> Fact  伏線の手がかり
+    from: [Item, Fact, Scene]
+    to: Fact
+    edge_props: []
+
+# 伏線は Fact に status を持たせて表現（foreshadowing.yaml と対応）
+foreshadow_status: [not_yet, planted, hinted, strengthened, recalled]
