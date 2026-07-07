@@ -1,6 +1,6 @@
 # Proposal: ハーネス対応 Skill/Agent 化とリファレンス整備
 
-- **Status**: draft（G-Intake 待ち）
+- **Status**: adopted（2026-07-06 承認、Phase 1+2 実装済み。Open Questions は推奨案で確定: Q1=4本のみ / Q2=主要8本 / Q3=新規作品のみ / Q4=コマンド提示方式。Phase 3 は未着手）
 - **Date**: 2026-07-06
 - **Slug**: harness-skills
 - **前提**: current/ は 2026-07-06 workbench 統合後の正本。本提案は current/ への Patch 案であり、承認（人間ゲート）まで current/ は変更しない。
