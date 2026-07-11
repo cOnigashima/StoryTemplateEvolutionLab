@@ -5,7 +5,7 @@
 
 ## 由来の見分け方
 - `docs/`, `agents/`, `skills/`, `prompts/`, `craft/`, `adapter/review_prompts/`, `adapter/*_format.yaml` … **元STEからのコピー（踏襲）**。
-- `template/`（core+overlay+runtime）, `tools/ontology_check.py`, `takt/`, `WORKFLOW.md` の一部 … **workbench で新規/再編**。
+- `template/`（core+overlay+runtime）, `tools/ontology_check.py`, `takt/`, `WORKFLOW.md` の一部 … **2026-07-06 の正本統合で新規/再編**。
 - 各ファイル冒頭の `origin:` タグ（STE-v4 / workbench / fools / villainess）も参照。
 
 ## 元STE current → new current 対応

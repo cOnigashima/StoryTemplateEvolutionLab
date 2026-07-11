@@ -15,6 +15,9 @@
 | `2026-04-30-zero-base-v4/` | 2026-04-30 | **historic / adopted-then-frozen** | 2026-04-30 採用。2026-07-06 に正本を `current/docs/domain/` へ移管し、本フォルダは採用時スナップショットとして凍結 |
 | `2026-04-31-storytemplate_workflow_handoff_pack_takt/` | 2026-04-31 | **historic / partially-absorbed** | TAKT 接合 Pack。v4 採用時は見送り → 2026-07-06 提案が TAKT ループを暫定採用し部分継承 |
 | `2026-07-06-workbench-ontology-loop/` | 2026-07-06 | **★ ADOPTED (2026-07-06)** | current を全面置換（オントロジー基盤 / TAKT ループ / core+overlay / 人間ゲート）。旧 current は `archive/2026-04-31-integreated/` へ |
+| `2026-07-06-harness-skills/` | 2026-07-06 | **★ ADOPTED (2026-07-06)** | skills / agents のハーネス化（`template/core/.claude/` + ルート `.claude/skills/`）とリファレンス整備（`current/docs/harness_map.md`） |
+| `2026-07-06-takt-deep-dive/` | 2026-07-06 | **proposed / under-discussion** | TAKT DeepDive。俺TUEEE をテストベッドに current を実地検証→proposal で正本進化。入口=00_README。current の state 定義二重化 等の矛盾を 01_findings に固定 |
+| `2026-07-11-workbench-term-cleanup/` | 2026-07-11 | **★ ADOPTED (2026-07-11)** | 実験コードネーム "workbench" が正本 current/ に混入（原因＝213ebbe 一括ダンプで抽象化スキップ）。B=実験フレーミング5箇所を中立語へ置換／C-2「workbench 統合」→「正本統合」3箇所／A・C-1（origin タグ）は据え置き。適用済み（26→17）。retro=learning/2026-07-11。入口=00_README |
 
 ---
 

@@ -2,7 +2,7 @@
 
 > **役割**: 「StoryTemplate を複製したい」「raw を入れる場所は?」「どこで執筆?」に 1 ページで答える、Claude / Agent / 人間共通の onboarding ガイド。
 > **詳細**: 運用契約は `CLAUDE.md`、ドメイン教義は `docs/domain/`。
-> **更新日**: 2026-07-06（workbench 統合・core+overlay 構造）
+> **更新日**: 2026-07-06（正本統合・core+overlay 構造）
 
 ---
 

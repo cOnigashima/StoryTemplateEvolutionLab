@@ -29,5 +29,6 @@
 - `2026-04-29-reorg-and-prompts.md` — v3 期の再編記録
 - `2026-04-29-handoff-to-next-session.md` — セッション引き継ぎの原型
 - `2026-07-06-workbench-integration.md` — workbench 統合の決着記録
+- `2026-07-11-workbench-term-cleanup.md` — 正本からの実験コードネーム "workbench" 除去（原因＝抽象化スキップの一括ダンプ）
 
 （04-29 の4本は origin: STE-v4。`archive/2026-04-31-integreated/learning/` からのコピー復元）

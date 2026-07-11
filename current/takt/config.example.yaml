@@ -3,7 +3,9 @@ provider: claude        # claude / claude-sdk / codex / opencode / cursor / copi
 model: sonnet           # 既定モデル。step ごとに上書き可
 language: ja
 
-# 実行ログ・レポートの出力先（workbench の logs に集約）
+# 実行ログ・レポートの出力先（作品側の logs に集約）
+# 作品側では runtime/logs/runs/ を指すこと（template/folder_structure.md と整合。
+# /handoff・/retro-meeting がここを読む。proposal/2026-07-06-harness-skills/03_design_lifecycle.md §4.2-2）
 runs_dir: ../logs/runs
 
 # step 別モデル上書きの例（クロスレビュー：実装と別系統でレビュー）
